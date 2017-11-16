@@ -13,6 +13,9 @@
 		B0DA28BF1FBD28D0002ACFDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0DA28BE1FBD28D0002ACFDA /* Assets.xcassets */; };
 		B0DA28C21FBD28D0002ACFDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0DA28C01FBD28D0002ACFDA /* LaunchScreen.storyboard */; };
 		B0DA28CD1FBD28D0002ACFDA /* DataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28CC1FBD28D0002ACFDA /* DataStructuresTests.swift */; };
+		B0DA28D91FBD28E0002ACFDA /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28D81FBD28E0002ACFDA /* Stack.swift */; };
+		B0DA28DA1FBD28E7002ACFDA /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28D81FBD28E0002ACFDA /* Stack.swift */; };
+		B0DA28DC1FBD29A2002ACFDA /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28DB1FBD29A2002ACFDA /* StackTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,8 @@
 		B0DA28C81FBD28D0002ACFDA /* DataStructuresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStructuresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DA28CC1FBD28D0002ACFDA /* DataStructuresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresTests.swift; sourceTree = "<group>"; };
 		B0DA28CE1FBD28D0002ACFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0DA28D81FBD28E0002ACFDA /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		B0DA28DB1FBD29A2002ACFDA /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,7 @@
 		B0DA28B61FBD28D0002ACFDA /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				B0DA28D71FBD28D5002ACFDA /* Stack */,
 				B0DA28B71FBD28D0002ACFDA /* AppDelegate.swift */,
 				B0DA28B91FBD28D0002ACFDA /* ViewController.swift */,
 				B0DA28BB1FBD28D0002ACFDA /* Main.storyboard */,
@@ -92,8 +98,17 @@
 			children = (
 				B0DA28CC1FBD28D0002ACFDA /* DataStructuresTests.swift */,
 				B0DA28CE1FBD28D0002ACFDA /* Info.plist */,
+				B0DA28DB1FBD29A2002ACFDA /* StackTests.swift */,
 			);
 			path = DataStructuresTests;
+			sourceTree = "<group>";
+		};
+		B0DA28D71FBD28D5002ACFDA /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				B0DA28D81FBD28E0002ACFDA /* Stack.swift */,
+			);
+			path = Stack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DA28BA1FBD28D0002ACFDA /* ViewController.swift in Sources */,
+				B0DA28D91FBD28E0002ACFDA /* Stack.swift in Sources */,
 				B0DA28B81FBD28D0002ACFDA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +224,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0DA28DA1FBD28E7002ACFDA /* Stack.swift in Sources */,
 				B0DA28CD1FBD28D0002ACFDA /* DataStructuresTests.swift in Sources */,
+				B0DA28DC1FBD29A2002ACFDA /* StackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
