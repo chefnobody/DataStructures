@@ -119,6 +119,7 @@ class StackTests: XCTestCase {
         XCTAssert(stack.pop() == nil)
     }
     
+    // peek
     
     func testPushedItemCanBePeekedAt() {
         let stack = Stack<Int>()
@@ -126,18 +127,14 @@ class StackTests: XCTestCase {
         XCTAssert(stack.peek() == 4)
     }
     
+    // isEmpty
+    
     func testStackWithItemIsNotEmpty() {
         let stack = Stack<Int>()
         stack.push(key: 1)
         XCTAssert(stack.isEmpty() == false)
     }
     
-    // Pushing multiple
+    // printKeys
     
-    
-    // Basic tests:
-    // - initialized state (empty list state)
-    // - pushing an item
-    // - pushing several items
-    // -
 }
