@@ -33,14 +33,9 @@ class StackTests: XCTestCase {
         XCTAssert(stack.isEmpty() == true)
     }
     
-    func testNewStackPeekReturnsNil() {
-        let stack = Stack<Int>()
-        XCTAssert(stack.peek() == nil)
-    }
-    
     // push
     
-    func testPushIncrementsStackCountWhenStackHasOneItem() {
+    func testPushIncrementsCountWhenStackHasOneItem() {
         let stack = Stack<Int>()
         stack.push(key: 5)
         XCTAssert(stack.count == 1)

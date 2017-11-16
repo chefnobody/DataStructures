@@ -16,6 +16,8 @@
 		B0DA28D91FBD28E0002ACFDA /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28D81FBD28E0002ACFDA /* Stack.swift */; };
 		B0DA28DA1FBD28E7002ACFDA /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28D81FBD28E0002ACFDA /* Stack.swift */; };
 		B0DA28DC1FBD29A2002ACFDA /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28DB1FBD29A2002ACFDA /* StackTests.swift */; };
+		B0DA28DF1FBDDCE0002ACFDA /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28DE1FBDDCE0002ACFDA /* Queue.swift */; };
+		B0DA28E11FBDDD8C002ACFDA /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28E01FBDDD8C002ACFDA /* QueueTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		B0DA28CE1FBD28D0002ACFDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0DA28D81FBD28E0002ACFDA /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		B0DA28DB1FBD29A2002ACFDA /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
+		B0DA28DE1FBDDCE0002ACFDA /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		B0DA28E01FBDDD8C002ACFDA /* QueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 		B0DA28B61FBD28D0002ACFDA /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				B0DA28DD1FBDDCD4002ACFDA /* Queue */,
 				B0DA28D71FBD28D5002ACFDA /* Stack */,
 				B0DA28B71FBD28D0002ACFDA /* AppDelegate.swift */,
 				B0DA28B91FBD28D0002ACFDA /* ViewController.swift */,
@@ -99,6 +104,7 @@
 				B0DA28CC1FBD28D0002ACFDA /* DataStructuresTests.swift */,
 				B0DA28CE1FBD28D0002ACFDA /* Info.plist */,
 				B0DA28DB1FBD29A2002ACFDA /* StackTests.swift */,
+				B0DA28E01FBDDD8C002ACFDA /* QueueTests.swift */,
 			);
 			path = DataStructuresTests;
 			sourceTree = "<group>";
@@ -109,6 +115,14 @@
 				B0DA28D81FBD28E0002ACFDA /* Stack.swift */,
 			);
 			path = Stack;
+			sourceTree = "<group>";
+		};
+		B0DA28DD1FBDDCD4002ACFDA /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				B0DA28DE1FBDDCE0002ACFDA /* Queue.swift */,
+			);
+			path = Queue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +231,7 @@
 				B0DA28BA1FBD28D0002ACFDA /* ViewController.swift in Sources */,
 				B0DA28D91FBD28E0002ACFDA /* Stack.swift in Sources */,
 				B0DA28B81FBD28D0002ACFDA /* AppDelegate.swift in Sources */,
+				B0DA28DF1FBDDCE0002ACFDA /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +242,7 @@
 				B0DA28DA1FBD28E7002ACFDA /* Stack.swift in Sources */,
 				B0DA28CD1FBD28D0002ACFDA /* DataStructuresTests.swift in Sources */,
 				B0DA28DC1FBD29A2002ACFDA /* StackTests.swift in Sources */,
+				B0DA28E11FBDDD8C002ACFDA /* QueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
