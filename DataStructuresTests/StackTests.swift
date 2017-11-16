@@ -116,16 +116,44 @@ class StackTests: XCTestCase {
         XCTAssert(stack.pop() == 40)
         XCTAssert(stack.pop() == 12)
         XCTAssert(stack.pop() == 6)
-        XCTAssert(stack.pop() == nil)
+        XCTAssert(stack.pop() == nil) // fails atm
     }
     
     // peek
     
-    func testPushedItemCanBePeekedAt() {
+    func testPeekOnEmptyStackReturnsNil() {
+        let stack = Stack<Int>()
+        XCTAssert(stack.peek() == nil)
+    }
+    
+    func testPeekOnOneItemStack() {
         let stack = Stack<Int>()
         stack.push(key: 4)
         XCTAssert(stack.peek() == 4)
     }
+    
+    func testPeekAfterPushingSeveralItems(){
+        let stack = Stack<Int>()
+        stack.push(key: 31)
+        stack.push(key: 71)
+        stack.push(key: 8)
+        stack.push(key: 99)
+        stack.push(key: 5)
+        XCTAssert(stack.peek() == 5)
+    }
+    
+    func testPeekDoesNotRemoveItemFromStack() {
+        let stack = Stack<Int>()
+        stack.push(key: 5)
+        stack.push(key: 31)
+        stack.push(key: 55)
+        XCTAssert(stack.peek() == 55)
+        XCTAssert(stack.count == 3)
+    }
+    
+    
+    
+    
     
     // isEmpty
     
