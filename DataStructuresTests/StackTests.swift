@@ -40,7 +40,7 @@ class StackTests: XCTestCase {
     
     // push
     
-    func testPushIncrementsStackCount() {
+    func testPushIncrementsStackCountWhenStackHasOneItem() {
         let stack = Stack<Int>()
         stack.push(key: 5)
         XCTAssert(stack.count == 1)
@@ -55,7 +55,7 @@ class StackTests: XCTestCase {
         XCTAssert(stack.printKeys() == "4,3,2,1")
     }
     
-    func testPushAddsItemsAndKeepsCount() {
+    func testPushAddsItemsAndKeepsAccurateCount() {
         let stack = Stack<Int>()
         stack.push(key: 0)
         stack.push(key: 5)
@@ -67,35 +67,32 @@ class StackTests: XCTestCase {
     
     // pop
     
-    func testPopReturnsNilOnEmptyStack() {
+    func testPopReturnsNilWhenStackHasNoItems() {
         let stack = Stack<Int>()
         XCTAssert(stack.pop() == nil)
     }
     
-    func testPopOnEmptyStackdoesNotDecrementCount() {
+    func testPopDoesNotDecrementCountWhenStackHasNoItems() {
         let stack = Stack<Int>()
+        XCTAssert(stack.count == 0)
+        
         stack.pop()
         stack.pop()
         stack.pop()
+        
         XCTAssert(stack.count == 0)
     }
     
-    func testPopReturnsFirstItemInStackWithOneItem() {
+    func testPopRemovesAndReturnsFirstItemInStackWithOneItem() {
         let stack = Stack<Int>()
         stack.push(key: 7)
-        XCTAssert(stack.pop() == 7)
+        let popped = stack.pop()
+        
+        XCTAssert(popped == 7)
+        XCTAssert(stack.count == 0)
     }
-    
-    func testPopDecrementsCount() {
-        let stack = Stack<Int>()
-        stack.push(key: 89)
-        stack.push(key: 11)
-        stack.push(key: 80)
-        stack.pop()
-        XCTAssert(stack.count == 2)
-    }
-    
-    func testPopReturnsLastItemPushedToStackWithSeveralItems() {
+
+    func testPopRemovesAndReturnsLastItemPushedOnStackWithSeveralItems() {
         let stack = Stack<Int>()
         stack.push(key: 7)
         stack.push(key: 1)
@@ -104,7 +101,16 @@ class StackTests: XCTestCase {
         XCTAssert(stack.pop() == 15)
     }
     
-    func testConsecutivePopsOnStackWithSeveralItems() {
+    func testPopDecrementsCountWhenPoppingItemOnStackWithSeveralItems() {
+        let stack = Stack<Int>()
+        stack.push(key: 89)
+        stack.push(key: 11)
+        stack.push(key: 80)
+        stack.pop()
+        XCTAssert(stack.count == 2)
+    }
+    
+    func testPoppingAllItemsOnStackWithSeveralItems() {
         let stack = Stack<Int>()
         stack.push(key: 6)
         stack.push(key: 12)
@@ -116,23 +122,23 @@ class StackTests: XCTestCase {
         XCTAssert(stack.pop() == 40)
         XCTAssert(stack.pop() == 12)
         XCTAssert(stack.pop() == 6)
-        XCTAssert(stack.pop() == nil) // fails atm
+        XCTAssert(stack.pop() == nil)
     }
     
     // peek
     
-    func testPeekOnEmptyStackReturnsNil() {
+    func testPeekReturnsNilWhenStackHasNoItems() {
         let stack = Stack<Int>()
         XCTAssert(stack.peek() == nil)
     }
     
-    func testPeekOnOneItemStack() {
+    func testPeekReturnsItemKeyWhenStackHasOneItem() {
         let stack = Stack<Int>()
         stack.push(key: 4)
         XCTAssert(stack.peek() == 4)
     }
     
-    func testPeekAfterPushingSeveralItems(){
+    func testPeekReturnsTopMostItemKeyWhenStackHasSeveralItems(){
         let stack = Stack<Int>()
         stack.push(key: 31)
         stack.push(key: 71)
@@ -151,18 +157,64 @@ class StackTests: XCTestCase {
         XCTAssert(stack.count == 3)
     }
     
-    
-    
-    
-    
     // isEmpty
     
-    func testStackWithItemIsNotEmpty() {
+    func testIsEmptyIsTrueWhenStackHasNoItems() {
+        let stack = Stack<Int>()
+        XCTAssert(stack.isEmpty() == true)
+    }
+    
+    func testIsEmptyIsFalseWhenStackHasOneItem() {
         let stack = Stack<Int>()
         stack.push(key: 1)
         XCTAssert(stack.isEmpty() == false)
     }
     
+    func testIsEmptyIsFalseWhenStackHasSeveralItems() {
+        let stack = Stack<Int>()
+        stack.push(key: 1)
+        stack.push(key: 2)
+        stack.push(key: 3)
+        XCTAssert(stack.isEmpty() == false)
+    }
+    
+    func testIsEmptyIsTrueWhenStackPushesAndPopsAllItems() {
+        let stack = Stack<Int>()
+        stack.push(key: 1)
+        stack.push(key: 2)
+        stack.push(key: 3)
+        stack.push(key: 4)
+        stack.push(key: 5)
+        
+        stack.pop() // 5
+        stack.pop() // 4
+        stack.pop() // 3
+        stack.pop() // 2
+        stack.pop() // 1
+
+        XCTAssert(stack.isEmpty() == true)
+    }
+    
     // printKeys
+    
+    func testPrintKeysReturnsNoEmptyMessageWhenStackHasNoItems() {
+        let stack = Stack<Int>()
+        XCTAssert(stack.printKeys() == "Stack is empty!")
+    }
+    
+    func testPrintKeysReturnsStringWhenStackHasOneItem() {
+        let stack = Stack<Int>()
+        stack.push(key: 31)
+        XCTAssert(stack.printKeys() == "31")
+    }
+    
+    func testPrintKeysReturnsStringWhenStackHasSeveralItems() {
+        let stack = Stack<Int>()
+        stack.push(key: 8)
+        stack.push(key: 18)
+        stack.push(key: 71)
+        stack.push(key: 91)
+        XCTAssert(stack.printKeys() == "91,71,18,8")
+    }
     
 }

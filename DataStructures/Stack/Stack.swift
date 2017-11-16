@@ -62,8 +62,12 @@ class Stack<T> {
         
         counter -= 1
         
+        // Move the head to the next node
         if let nextNode = top.next {
             top = nextNode
+        } else {
+            // Otherwise, nil out the head's key.
+            top.key = nil
         }
         
         return key
