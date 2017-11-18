@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B050D3741FBF780400EE1241 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050D3731FBF780400EE1241 /* Trie.swift */; };
+		B050D3761FBF791500EE1241 /* TrieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B050D3751FBF791500EE1241 /* TrieTests.swift */; };
 		B0DA28B81FBD28D0002ACFDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28B71FBD28D0002ACFDA /* AppDelegate.swift */; };
 		B0DA28BA1FBD28D0002ACFDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA28B91FBD28D0002ACFDA /* ViewController.swift */; };
 		B0DA28BD1FBD28D0002ACFDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0DA28BB1FBD28D0002ACFDA /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B050D3731FBF780400EE1241 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
+		B050D3751FBF791500EE1241 /* TrieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieTests.swift; sourceTree = "<group>"; };
 		B0DA28B41FBD28D0002ACFDA /* DataStructures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DA28B71FBD28D0002ACFDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0DA28B91FBD28D0002ACFDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B050D3721FBF77EE00EE1241 /* Trie */ = {
+			isa = PBXGroup;
+			children = (
+				B050D3731FBF780400EE1241 /* Trie.swift */,
+			);
+			path = Trie;
+			sourceTree = "<group>";
+		};
 		B0DA28AB1FBD28CF002ACFDA = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +98,7 @@
 		B0DA28B61FBD28D0002ACFDA /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				B050D3721FBF77EE00EE1241 /* Trie */,
 				B0DA28DD1FBDDCD4002ACFDA /* Queue */,
 				B0DA28D71FBD28D5002ACFDA /* Stack */,
 				B0DA28B71FBD28D0002ACFDA /* AppDelegate.swift */,
@@ -105,6 +118,7 @@
 				B0DA28CE1FBD28D0002ACFDA /* Info.plist */,
 				B0DA28DB1FBD29A2002ACFDA /* StackTests.swift */,
 				B0DA28E01FBDDD8C002ACFDA /* QueueTests.swift */,
+				B050D3751FBF791500EE1241 /* TrieTests.swift */,
 			);
 			path = DataStructuresTests;
 			sourceTree = "<group>";
@@ -228,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B050D3741FBF780400EE1241 /* Trie.swift in Sources */,
 				B0DA28BA1FBD28D0002ACFDA /* ViewController.swift in Sources */,
 				B0DA28D91FBD28E0002ACFDA /* Stack.swift in Sources */,
 				B0DA28B81FBD28D0002ACFDA /* AppDelegate.swift in Sources */,
@@ -240,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DA28DA1FBD28E7002ACFDA /* Stack.swift in Sources */,
+				B050D3761FBF791500EE1241 /* TrieTests.swift in Sources */,
 				B0DA28CD1FBD28D0002ACFDA /* DataStructuresTests.swift in Sources */,
 				B0DA28DC1FBD29A2002ACFDA /* StackTests.swift in Sources */,
 				B0DA28E11FBDDD8C002ACFDA /* QueueTests.swift in Sources */,
