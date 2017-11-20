@@ -73,8 +73,52 @@ class Trie {
         }
     }
     
-    
-    
+    func find(_ keyword:String) -> Array<String>? {
+        
+        // empty input case
+        guard keyword.count > 0 else {
+             return nil
+        }
+        
+        var current:TrieNode = root
+        var wordList = Array<String>()
+        
+        while keyword.count != current.level {
+            
+            var childToUse: TrieNode!
+            let searchKey = keyword.prefix(current.level + 1)
+            
+            for child in current.children {
+                if let childKey = child.key, childKey == searchKey {
+                    childToUse = child
+                    current = childToUse
+                    break
+                }
+            }
+            
+            if childToUse == nil {
+                return nil
+            }
+            
+        } // end while
+        
+        // retreive the keyword and any descendants
+        if current.key == keyword && current.isFinal {
+            if let childKey = current.key {
+                wordList.append(childKey)
+            }
+        }
+        
+        for child in current.children {
+            if child.isFinal {
+                if let childKey = child.key {
+                    wordList.append(childKey)
+                }
+            }
+        }
+        
+        return wordList
+    }
 }
 
 
