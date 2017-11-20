@@ -21,13 +21,15 @@ class TrieNode {
     }
 }
 
+fileprivate struct InvalidInputError: Error { }
+
 class Trie {
     private var root = TrieNode()
     
-    func append(word keyword:String) {
+    func append(word keyword:String) throws {
     
         guard keyword.count > 0 else {
-            return
+            throw InvalidInputError()
         }
         
         var current: TrieNode = root
@@ -38,8 +40,7 @@ class Trie {
             
             // Grab subscript from keyword upto and including
             // the length of the current level
-            let endIndex = keyword.index(keyword.startIndex, offsetBy:current.level + 1)
-            let searchKey = keyword[...endIndex]
+            let searchKey = keyword.prefix(current.level + 1)
             
             // iterate through children looking for the matching key for this search key
             for child in current.children {
@@ -63,7 +64,17 @@ class Trie {
             current = childToUse!
             
         } // end while
+      
+        // final end of word check
+        if keyword.count == current.level {
+            current.isFinal = true
+            print("end of word reached!")
+            return
+        }
     }
+    
+    
+    
 }
 
 

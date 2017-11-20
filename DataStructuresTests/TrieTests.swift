@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import DataStructures
 
 class TrieTests: XCTestCase {
     
@@ -20,16 +21,20 @@ class TrieTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // Initialized state
+    
+    // append
+    
+    func testAppendEmptyWordThrowsError() {
+        let trie = Trie()
+        try XCTAssertThrowsError(trie.append(word: ""))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testAppendWordCreatesTrieWithHeightMatchingWordLength() throws {
+        let trie = Trie()
+        try trie.append(word: "pizza")
+//        XCTAssert(trie.)
+        dump(trie)
     }
     
 }
