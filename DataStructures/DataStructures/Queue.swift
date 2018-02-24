@@ -19,22 +19,26 @@ fileprivate class Node<T> {
 // Adding items 0(n) time because you have to traverse the entire list to append the new item.
 // Removing items 0(1) time becuase you always take the top item off the list.
 //
-class Queue<T> {
+public class Queue<T> {
     
-    private var top: Node<T>?
-    private var counter: Int
+    // MARK: - Public properties
     
     public var count: Int {
         return counter
     }
     
-    init() {
+    // MARK: - Stored Properties
+    
+    private var top: Node<T>?
+    private var counter: Int
+    
+    public init() {
         top = Node<T>()
         counter = 0
     }
     
     // Add some key to the back of the line.
-    func enQueue(key: T) {
+    public func enQueue(key: T) {
         
         counter += 1
         
@@ -60,7 +64,7 @@ class Queue<T> {
     
     // Happens in 0(1) "constant" time because we're always ever
     // popping the first item off the head of the line.
-    @discardableResult func deQueue() -> T? {
+    @discardableResult public func deQueue() -> T? {
         
         // Empty line, case. You get nothing!
         guard !isEmpty() else {
@@ -84,15 +88,15 @@ class Queue<T> {
         return key
     }
     
-    func peek() -> T? {
+    public func peek() -> T? {
         return top?.key
     }
     
-    func isEmpty() -> Bool {
+    public func isEmpty() -> Bool {
         return peek() == nil
     }
     
-    func printKeys() -> String {
+    public func printKeys() -> String {
         
         guard !isEmpty() else {
             return "Queue is empty!"

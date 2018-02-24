@@ -19,23 +19,27 @@ fileprivate class Node<T> {
 // Adding items 0(1) constant time. Why? You're always pushing onto the the head.
 // Removing items 0(1) constant time. Why? You're always popping off the head.
 //
-class Stack<T> {
-    
-    private var top: Node<T>
-    private var counter: Int
+public class Stack<T> {
+
+    // MARK: - Public Properties
     
     public var count: Int {
         return counter
     }
+
+    // MARK: - Stored Properties
     
-    init() {
+    private var top: Node<T>
+    private var counter: Int
+    
+    public init() {
         top = Node()
         counter = 0
     }
     
     // Adding items happens in O(1) "constant" time because we're
     // Always adding to the head of line.
-    func push(key: T) {
+    public func push(key: T) {
         
         counter += 1
         
@@ -54,7 +58,7 @@ class Stack<T> {
     }
     
     // Also happens in O(1) "constant" time.
-    @discardableResult func pop() -> T? {
+    @discardableResult public func pop() -> T? {
         
         guard let key = top.key else {
             return nil
@@ -73,15 +77,15 @@ class Stack<T> {
         return key
     }
     
-    func peek() -> T? {
+    public func peek() -> T? {
         return top.key
     }
     
-    func isEmpty() -> Bool {
+    public func isEmpty() -> Bool {
         return peek() == nil
     }
 
-    func printKeys() -> String {
+    public func printKeys() -> String {
         guard !isEmpty() else {
             return "Stack is empty!"
         }

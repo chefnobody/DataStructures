@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TrieNode {
+fileprivate class TrieNode {
     var key: String?
     var children: Array<TrieNode>
     var isFinal: Bool
@@ -21,12 +21,21 @@ class TrieNode {
     }
 }
 
-fileprivate struct InvalidInputError: Error { }
+public struct InvalidInputError: Error { }
 
-class Trie {
+public class Trie {
+    
+    // MARK: - Stored properties
+    
     private var root = TrieNode()
     
-    func append(word keyword:String) throws {
+    // MARK: - Initializer
+    
+    public init() {}
+    
+    // MARK: - Public methods
+    
+    public func append(word keyword:String) throws {
     
         guard keyword.count > 0 else {
             throw InvalidInputError()
@@ -72,9 +81,4 @@ class Trie {
             return
         }
     }
-    
-    
-    
 }
-
-
