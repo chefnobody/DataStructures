@@ -18,6 +18,7 @@
 		B0774FC22040FAF6004182F1 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0774FBF2040FAF6004182F1 /* QueueTests.swift */; };
 		B07750002041E79F004182F1 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0774FFF2041E79F004182F1 /* LinkedList.swift */; };
 		B07750012041E79F004182F1 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0774FFF2041E79F004182F1 /* LinkedList.swift */; };
+		B0775003204360CB004182F1 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0775002204360CB004182F1 /* LinkedListTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		B0774FBF2040FAF6004182F1 /* QueueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 		B0774FFE2041E594004182F1 /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = ScratchPad.playground; path = ../ScratchPad.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B0774FFF2041E79F004182F1 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		B0775002204360CB004182F1 /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				B0774FAB2040FA51004182F1 /* DataStructuresTests.swift */,
 				B0774FAD2040FA51004182F1 /* Info.plist */,
+				B0775002204360CB004182F1 /* LinkedListTests.swift */,
 				B0774FBF2040FAF6004182F1 /* QueueTests.swift */,
 				B0774FBD2040FAF6004182F1 /* StackTests.swift */,
 				B0774FBE2040FAF6004182F1 /* TrieTests.swift */,
@@ -236,6 +239,7 @@
 				B0774FC02040FAF6004182F1 /* StackTests.swift in Sources */,
 				B07750012041E79F004182F1 /* LinkedList.swift in Sources */,
 				B0774FAC2040FA51004182F1 /* DataStructuresTests.swift in Sources */,
+				B0775003204360CB004182F1 /* LinkedListTests.swift in Sources */,
 				B0774FC22040FAF6004182F1 /* QueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
