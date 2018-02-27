@@ -8,7 +8,7 @@
 
 import Foundation
 
-fileprivate class TrieNode {
+class TrieNode {
     var key: String?
     var children: Array<TrieNode>
     var isFinal: Bool
@@ -21,21 +21,12 @@ fileprivate class TrieNode {
     }
 }
 
-public struct InvalidInputError: Error { }
+fileprivate struct InvalidInputError: Error { }
 
-public class Trie {
-    
-    // MARK: - Stored properties
-    
+class Trie {
     private var root = TrieNode()
     
-    // MARK: - Initializer
-    
-    public init() {}
-    
-    // MARK: - Public methods
-    
-    public func append(word keyword:String) throws {
+    func append(word keyword:String) throws {
     
         guard keyword.count > 0 else {
             throw InvalidInputError()
@@ -81,4 +72,53 @@ public class Trie {
             return
         }
     }
+    
+    func find(_ keyword:String) -> Array<String>? {
+        
+        // empty input case
+        guard keyword.count > 0 else {
+             return nil
+        }
+        
+        var current:TrieNode = root
+        var wordList = Array<String>()
+        
+        while keyword.count != current.level {
+            
+            var childToUse: TrieNode!
+            let searchKey = keyword.prefix(current.level + 1)
+            
+            for child in current.children {
+                if let childKey = child.key, childKey == searchKey {
+                    childToUse = child
+                    current = childToUse
+                    break
+                }
+            }
+            
+            if childToUse == nil {
+                return nil
+            }
+            
+        } // end while
+        
+        // retreive the keyword and any descendants
+        if current.key == keyword && current.isFinal {
+            if let childKey = current.key {
+                wordList.append(childKey)
+            }
+        }
+        
+        for child in current.children {
+            if child.isFinal {
+                if let childKey = child.key {
+                    wordList.append(childKey)
+                }
+            }
+        }
+        
+        return wordList
+    }
 }
+
+

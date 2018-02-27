@@ -30,11 +30,27 @@ class TrieTests: XCTestCase {
         try XCTAssertThrowsError(trie.append(word: ""))
     }
     
-    func testAppendWordCreatesTrieWithHeightMatchingWordLength() throws {
+    func testAppendedWordCanBeFound() throws {
         let trie = Trie()
         try trie.append(word: "pizza")
-//        XCTAssert(trie.)
-        dump(trie)
+        
+        // Is it a valid test of one function to use another function?
+        // Is this a test of both .append and .find?
+        let results = trie.find("pizza")
+        XCTAssert(results?.count == 1)
+        XCTAssert(results?.first == "pizza")
+    }
+    
+    func testAppendedDisimilarWordsCanBeFound() throws {
+        let trie = Trie()
+        try trie.append(word: "pizza")
+        try trie.append(word: "beer")
+        
+        var results = trie.find("pizza")
+        XCTAssert(results?.first == "pizza")
+        
+        results = trie.find("beer")
+        XCTAssert(results?.first == "beer")
     }
     
 }
