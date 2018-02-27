@@ -165,7 +165,7 @@ public class LinkedList<T: Comparable> {
     }
     
     public func remove(at index: Int) {
-        
+        fatalError("FAIL: Not implemented yet.")
         // check index bounds
         
         // A few cases to consider:

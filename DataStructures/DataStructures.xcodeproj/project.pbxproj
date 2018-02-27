@@ -19,6 +19,10 @@
 		B07750002041E79F004182F1 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0774FFF2041E79F004182F1 /* LinkedList.swift */; };
 		B07750012041E79F004182F1 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0774FFF2041E79F004182F1 /* LinkedList.swift */; };
 		B0775003204360CB004182F1 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0775002204360CB004182F1 /* LinkedListTests.swift */; };
+		B07750052044E771004182F1 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07750042044E771004182F1 /* HashTable.swift */; };
+		B07750072044E7FC004182F1 /* HashTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07750062044E7FC004182F1 /* HashTableTests.swift */; };
+		B077500A2044EDFC004182F1 /* UnicodeModularHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07750092044EDFC004182F1 /* UnicodeModularHash.swift */; };
+		B077500B2044EF27004182F1 /* UnicodeModularHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07750092044EDFC004182F1 /* UnicodeModularHash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,9 @@
 		B0774FFE2041E594004182F1 /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = ScratchPad.playground; path = ../ScratchPad.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B0774FFF2041E79F004182F1 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		B0775002204360CB004182F1 /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
+		B07750042044E771004182F1 /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
+		B07750062044E7FC004182F1 /* HashTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableTests.swift; sourceTree = "<group>"; };
+		B07750092044EDFC004182F1 /* UnicodeModularHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeModularHash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,10 +99,12 @@
 			children = (
 				B0774FA02040FA50004182F1 /* DataStructures.h */,
 				B0774FA12040FA50004182F1 /* Info.plist */,
+				B07750042044E771004182F1 /* HashTable.swift */,
+				B0774FFF2041E79F004182F1 /* LinkedList.swift */,
 				B0774FB72040FAC3004182F1 /* Queue.swift */,
 				B0774FB92040FACE004182F1 /* Stack.swift */,
 				B0774FBB2040FADA004182F1 /* Trie.swift */,
-				B0774FFF2041E79F004182F1 /* LinkedList.swift */,
+				B07750082044EC05004182F1 /* Hashing */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -103,14 +112,23 @@
 		B0774FAA2040FA51004182F1 /* DataStructuresTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0774FAB2040FA51004182F1 /* DataStructuresTests.swift */,
 				B0774FAD2040FA51004182F1 /* Info.plist */,
+				B0774FAB2040FA51004182F1 /* DataStructuresTests.swift */,
+				B07750062044E7FC004182F1 /* HashTableTests.swift */,
 				B0775002204360CB004182F1 /* LinkedListTests.swift */,
 				B0774FBF2040FAF6004182F1 /* QueueTests.swift */,
 				B0774FBD2040FAF6004182F1 /* StackTests.swift */,
 				B0774FBE2040FAF6004182F1 /* TrieTests.swift */,
 			);
 			path = DataStructuresTests;
+			sourceTree = "<group>";
+		};
+		B07750082044EC05004182F1 /* Hashing */ = {
+			isa = PBXGroup;
+			children = (
+				B07750092044EDFC004182F1 /* UnicodeModularHash.swift */,
+			);
+			path = Hashing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B077500A2044EDFC004182F1 /* UnicodeModularHash.swift in Sources */,
 				B0774FBC2040FADA004182F1 /* Trie.swift in Sources */,
 				B0774FBA2040FACE004182F1 /* Stack.swift in Sources */,
+				B07750052044E771004182F1 /* HashTable.swift in Sources */,
 				B07750002041E79F004182F1 /* LinkedList.swift in Sources */,
 				B0774FB82040FAC3004182F1 /* Queue.swift in Sources */,
 			);
@@ -237,10 +257,12 @@
 			files = (
 				B0774FC12040FAF6004182F1 /* TrieTests.swift in Sources */,
 				B0774FC02040FAF6004182F1 /* StackTests.swift in Sources */,
+				B077500B2044EF27004182F1 /* UnicodeModularHash.swift in Sources */,
 				B07750012041E79F004182F1 /* LinkedList.swift in Sources */,
 				B0774FAC2040FA51004182F1 /* DataStructuresTests.swift in Sources */,
 				B0775003204360CB004182F1 /* LinkedListTests.swift in Sources */,
 				B0774FC22040FAF6004182F1 /* QueueTests.swift in Sources */,
+				B07750072044E7FC004182F1 /* HashTableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
