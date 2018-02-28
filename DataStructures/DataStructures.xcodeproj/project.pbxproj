@@ -54,6 +54,104 @@
 		B07750042044E771004182F1 /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
 		B07750062044E7FC004182F1 /* HashTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableTests.swift; sourceTree = "<group>"; };
 		B07750092044EDFC004182F1 /* UnicodeModularHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeModularHash.swift; sourceTree = "<group>"; };
+		B077500E2046E696004182F1 /* 1.1-IsUnique.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.1-IsUnique.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B077500F2046E696004182F1 /* 1.2-CheckPermutation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.2-CheckPermutation.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750102046E696004182F1 /* 1.3-URLify.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.3-URLify.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750132046E828004182F1 /* 1.4-PalindromePermutation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.4-PalindromePermutation.playground"; sourceTree = "<group>"; };
+		B07750142046E828004182F1 /* 1.5-OneAway.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.5-OneAway.playground"; sourceTree = "<group>"; };
+		B07750152046E829004182F1 /* 1.7-RotateMatrix.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.7-RotateMatrix.playground"; sourceTree = "<group>"; };
+		B07750162046E829004182F1 /* 1.8-ZeroMatrix.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.8-ZeroMatrix.playground"; sourceTree = "<group>"; };
+		B07750172046E829004182F1 /* 1.9-StringRotation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.9-StringRotation.playground"; sourceTree = "<group>"; };
+		B07750182046E829004182F1 /* 1.6-StringCompression.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.6-StringCompression.playground"; sourceTree = "<group>"; };
+		B077501A2046EBA2004182F1 /* 2.1-RemoveDupes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.1-RemoveDupes.playground"; sourceTree = "<group>"; };
+		B077501B2046EBA2004182F1 /* 2.8-LoopDetection.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.8-LoopDetection.playground"; sourceTree = "<group>"; };
+		B077501C2046EBA2004182F1 /* 2.4-Partition.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.4-Partition.playground"; sourceTree = "<group>"; };
+		B077501D2046EBA2004182F1 /* 2.7-Intersection.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.7-Intersection.playground"; sourceTree = "<group>"; };
+		B077501E2046EBA2004182F1 /* 2.6-Palindrome.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.6-Palindrome.playground"; sourceTree = "<group>"; };
+		B077501F2046EBA2004182F1 /* 2.5-SumLists.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.5-SumLists.playground"; sourceTree = "<group>"; };
+		B07750202046EBA2004182F1 /* 2.3-DeleteMiddleNode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.3-DeleteMiddleNode.playground"; sourceTree = "<group>"; };
+		B07750212046EBA2004182F1 /* 2.2-ReturnKthToLast.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.2-ReturnKthToLast.playground"; sourceTree = "<group>"; };
+		B07750232046EBB5004182F1 /* 3.1-ThreeInOne.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.1-ThreeInOne.playground"; sourceTree = "<group>"; };
+		B07750242046EBB5004182F1 /* 3.2-StackMin.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.2-StackMin.playground"; sourceTree = "<group>"; };
+		B07750252046EBB5004182F1 /* 3.3-StackOfPlates.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.3-StackOfPlates.playground"; sourceTree = "<group>"; };
+		B07750262046EBB5004182F1 /* 3.4-QueueViaStacks.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.4-QueueViaStacks.playground"; sourceTree = "<group>"; };
+		B07750272046EBB5004182F1 /* 3.5-SortStack.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.5-SortStack.playground"; sourceTree = "<group>"; };
+		B07750282046EBB5004182F1 /* 3.6-AnimalShelter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.6-AnimalShelter.playground"; sourceTree = "<group>"; };
+		B077502A2046EBB5004182F1 /* 4.1-RouteBetweenNodes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.1-RouteBetweenNodes.playground"; sourceTree = "<group>"; };
+		B077502B2046EBB5004182F1 /* 4.10-CheckSubtree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.10-CheckSubtree.playground"; sourceTree = "<group>"; };
+		B077502C2046EBB5004182F1 /* 4.11-RandomNode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.11-RandomNode.playground"; sourceTree = "<group>"; };
+		B077502D2046EBB5004182F1 /* 4.12-PathsWithSum.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.12-PathsWithSum.playground"; sourceTree = "<group>"; };
+		B077502E2046EBB5004182F1 /* 4.2-MinimalTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.2-MinimalTree.playground"; sourceTree = "<group>"; };
+		B077502F2046EBB5004182F1 /* 4.3-ListOfDepths.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.3-ListOfDepths.playground"; sourceTree = "<group>"; };
+		B07750302046EBB5004182F1 /* 4.4-CheckBalanced.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.4-CheckBalanced.playground"; sourceTree = "<group>"; };
+		B07750312046EBB5004182F1 /* 4.5-ValidateBST.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.5-ValidateBST.playground"; sourceTree = "<group>"; };
+		B07750322046EBB5004182F1 /* 4.6-Successor.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.6-Successor.playground"; sourceTree = "<group>"; };
+		B07750332046EBB5004182F1 /* 4.7-BuildOrder.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.7-BuildOrder.playground"; sourceTree = "<group>"; };
+		B07750342046EBB5004182F1 /* 4.8-FirstCommonAncestor.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.8-FirstCommonAncestor.playground"; sourceTree = "<group>"; };
+		B07750352046EBB5004182F1 /* 4.9-BSTSequences.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.9-BSTSequences.playground"; sourceTree = "<group>"; };
+		B07750372047040C004182F1 /* 7.1-DeckOfCards.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.1-DeckOfCards.playground"; sourceTree = "<group>"; };
+		B07750382047040C004182F1 /* 7.10-Minesweeper.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.10-Minesweeper.playground"; sourceTree = "<group>"; };
+		B07750392047040C004182F1 /* 7.11-FileSystem.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.11-FileSystem.playground"; sourceTree = "<group>"; };
+		B077503A2047040C004182F1 /* 7.12-HashTable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.12-HashTable.playground"; sourceTree = "<group>"; };
+		B077503B2047040C004182F1 /* 7.2-CallCenter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.2-CallCenter.playground"; sourceTree = "<group>"; };
+		B077503C2047040C004182F1 /* 7.3-JukeBox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.3-JukeBox.playground"; sourceTree = "<group>"; };
+		B077503D2047040C004182F1 /* 7.4-ParkingLot.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.4-ParkingLot.playground"; sourceTree = "<group>"; };
+		B077503E2047040C004182F1 /* 7.5-OnlineBookReader.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.5-OnlineBookReader.playground"; sourceTree = "<group>"; };
+		B077503F2047040C004182F1 /* 7.6-Jigsaw.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.6-Jigsaw.playground"; sourceTree = "<group>"; };
+		B07750402047040C004182F1 /* 7.7-ChatServer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.7-ChatServer.playground"; sourceTree = "<group>"; };
+		B07750412047040C004182F1 /* 7.8-Othello.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.8-Othello.playground"; sourceTree = "<group>"; };
+		B07750422047040C004182F1 /* 7.9-CircularArray.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.9-CircularArray.playground"; sourceTree = "<group>"; };
+		B07750442047040C004182F1 /* 9.1-StockData.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9.1-StockData.playground"; sourceTree = "<group>"; };
+		B07750452047040C004182F1 /* 9.2-SocialNetwork.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9.2-SocialNetwork.playground"; sourceTree = "<group>"; };
+		B07750462047040C004182F1 /* 9.3-WebCrawler.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9.3-WebCrawler.playground"; sourceTree = "<group>"; };
+		B07750472047040C004182F1 /* 9.4-DuplicateURLs.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9.4-DuplicateURLs.playground"; sourceTree = "<group>"; };
+		B07750482047040C004182F1 /* 9.5-Cache.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9.5-Cache.playground"; sourceTree = "<group>"; };
+		B07750492047040C004182F1 /* 9.6-SalesRank.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9.6-SalesRank.playground"; sourceTree = "<group>"; };
+		B077504A2047040C004182F1 /* 9.7-PersonalFinanceManager.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9.7-PersonalFinanceManager.playground"; sourceTree = "<group>"; };
+		B077504B2047040C004182F1 /* 9.8-Pastebin.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9.8-Pastebin.playground"; sourceTree = "<group>"; };
+		B077504D2047040D004182F1 /* 5.1-Insertion.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "5.1-Insertion.playground"; sourceTree = "<group>"; };
+		B077504E2047040D004182F1 /* 5.2-BinaryToString.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "5.2-BinaryToString.playground"; sourceTree = "<group>"; };
+		B077504F2047040D004182F1 /* 5.3-FlipBitToWin.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "5.3-FlipBitToWin.playground"; sourceTree = "<group>"; };
+		B07750502047040D004182F1 /* 5.4-NextNumber.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "5.4-NextNumber.playground"; sourceTree = "<group>"; };
+		B07750512047040D004182F1 /* 5.5-Debugger.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "5.5-Debugger.playground"; sourceTree = "<group>"; };
+		B07750522047040D004182F1 /* 5.6-Conversion.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "5.6-Conversion.playground"; sourceTree = "<group>"; };
+		B07750532047040D004182F1 /* 5.7-PairwiseSwap.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "5.7-PairwiseSwap.playground"; sourceTree = "<group>"; };
+		B07750542047040D004182F1 /* 5.8-DrawLine.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "5.8-DrawLine.playground"; sourceTree = "<group>"; };
+		B07750562047040D004182F1 /* 6.1-TheHeavyPill.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6.1-TheHeavyPill.playground"; sourceTree = "<group>"; };
+		B07750572047040D004182F1 /* 6.10-Poison.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6.10-Poison.playground"; sourceTree = "<group>"; };
+		B07750582047040D004182F1 /* 6.2-Basketball.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6.2-Basketball.playground"; sourceTree = "<group>"; };
+		B07750592047040D004182F1 /* 6.3-Dominos.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6.3-Dominos.playground"; sourceTree = "<group>"; };
+		B077505A2047040D004182F1 /* 6.4-AntsOnATriangle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6.4-AntsOnATriangle.playground"; sourceTree = "<group>"; };
+		B077505B2047040D004182F1 /* 6.5-JugsOfWater.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6.5-JugsOfWater.playground"; sourceTree = "<group>"; };
+		B077505C2047040D004182F1 /* 6.6-Blue-EyedIsland.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6.6-Blue-EyedIsland.playground"; sourceTree = "<group>"; };
+		B077505D2047040D004182F1 /* 6.7-TheApocalypse.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6.7-TheApocalypse.playground"; sourceTree = "<group>"; };
+		B077505E2047040D004182F1 /* 6.8-TheEggDropProblem.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6.8-TheEggDropProblem.playground"; sourceTree = "<group>"; };
+		B077505F2047040D004182F1 /* 6.9-100Lockers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "6.9-100Lockers.playground"; sourceTree = "<group>"; };
+		B07750612047040D004182F1 /* 8.1-TripleStep.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.1-TripleStep.playground"; sourceTree = "<group>"; };
+		B07750622047040D004182F1 /* 8.10-PaintFill.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.10-PaintFill.playground"; sourceTree = "<group>"; };
+		B07750632047040D004182F1 /* 8.11-Coins.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.11-Coins.playground"; sourceTree = "<group>"; };
+		B07750642047040D004182F1 /* 8.12-EightQueens.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.12-EightQueens.playground"; sourceTree = "<group>"; };
+		B07750652047040D004182F1 /* 8.13-StackOfBoxes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.13-StackOfBoxes.playground"; sourceTree = "<group>"; };
+		B07750662047040D004182F1 /* 8.14-BooleanEvaluation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.14-BooleanEvaluation.playground"; sourceTree = "<group>"; };
+		B07750672047040D004182F1 /* 8.2-RobotInAGrid.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.2-RobotInAGrid.playground"; sourceTree = "<group>"; };
+		B07750682047040D004182F1 /* 8.3-MagicIndex.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.3-MagicIndex.playground"; sourceTree = "<group>"; };
+		B07750692047040D004182F1 /* 8.4-PowerSet.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.4-PowerSet.playground"; sourceTree = "<group>"; };
+		B077506A2047040D004182F1 /* 8.5-RecursiveMultiply.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.5-RecursiveMultiply.playground"; sourceTree = "<group>"; };
+		B077506B2047040D004182F1 /* 8.6-TowersOfHanoi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.6-TowersOfHanoi.playground"; sourceTree = "<group>"; };
+		B077506C2047040D004182F1 /* 8.7-PermutationsWithoutDups.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.7-PermutationsWithoutDups.playground"; sourceTree = "<group>"; };
+		B077506D2047040D004182F1 /* 8.8-PerumtationsWithDupes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.8-PerumtationsWithDupes.playground"; sourceTree = "<group>"; };
+		B077506E2047040D004182F1 /* 8.9-Parens.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "8.9-Parens.playground"; sourceTree = "<group>"; };
+		B07750702047040D004182F1 /* 10.1-SortedMerge.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.1-SortedMerge.playground"; sourceTree = "<group>"; };
+		B07750712047040D004182F1 /* 10.10-RankFromStream.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.10-RankFromStream.playground"; sourceTree = "<group>"; };
+		B07750722047040D004182F1 /* 10.11-PeaksAndValleys.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.11-PeaksAndValleys.playground"; sourceTree = "<group>"; };
+		B07750732047040D004182F1 /* 10.2-GroupAnagrams.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.2-GroupAnagrams.playground"; sourceTree = "<group>"; };
+		B07750742047040D004182F1 /* 10.3-SearchInRotatedArray.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.3-SearchInRotatedArray.playground"; sourceTree = "<group>"; };
+		B07750752047040D004182F1 /* 10.4-SortedSearchNoSize.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.4-SortedSearchNoSize.playground"; sourceTree = "<group>"; };
+		B07750762047040D004182F1 /* 10.5-SparseSearch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.5-SparseSearch.playground"; sourceTree = "<group>"; };
+		B07750772047040D004182F1 /* 10.6-SortBigFile.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.6-SortBigFile.playground"; sourceTree = "<group>"; };
+		B07750782047040D004182F1 /* 10.7-MissingInt.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.7-MissingInt.playground"; sourceTree = "<group>"; };
+		B07750792047040D004182F1 /* 10.8-FindDuplicates.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.8-FindDuplicates.playground"; sourceTree = "<group>"; };
+		B077507A2047040D004182F1 /* 10.9-SortedMatrixSearch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.9-SortedMatrixSearch.playground"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +176,7 @@
 		B0774F932040FA50004182F1 = {
 			isa = PBXGroup;
 			children = (
+				B077500C2046E696004182F1 /* CrackingCodeInterview */,
 				B0774F9F2040FA50004182F1 /* DataStructures */,
 				B0774FAA2040FA51004182F1 /* DataStructuresTests */,
 				B0774F9E2040FA50004182F1 /* Products */,
@@ -129,6 +228,191 @@
 				B07750092044EDFC004182F1 /* UnicodeModularHash.swift */,
 			);
 			path = Hashing;
+			sourceTree = "<group>";
+		};
+		B077500C2046E696004182F1 /* CrackingCodeInterview */ = {
+			isa = PBXGroup;
+			children = (
+				B077500D2046E696004182F1 /* ArraysStrings */,
+				B077504C2047040D004182F1 /* BitManip */,
+				B07750192046E84E004182F1 /* LinkedLists */,
+				B07750552047040D004182F1 /* MathLogicPuzzles */,
+				B07750362047040C004182F1 /* OOD */,
+				B07750602047040D004182F1 /* RescursionDynamicProgramming */,
+				B077506F2047040D004182F1 /* SortingSearching */,
+				B07750222046EBB5004182F1 /* StacksQueues */,
+				B07750432047040C004182F1 /* SystemDesignScalability */,
+				B07750292046EBB5004182F1 /* TreesGraphs */,
+			);
+			path = CrackingCodeInterview;
+			sourceTree = "<group>";
+		};
+		B077500D2046E696004182F1 /* ArraysStrings */ = {
+			isa = PBXGroup;
+			children = (
+				B077500E2046E696004182F1 /* 1.1-IsUnique.playground */,
+				B077500F2046E696004182F1 /* 1.2-CheckPermutation.playground */,
+				B07750102046E696004182F1 /* 1.3-URLify.playground */,
+				B07750132046E828004182F1 /* 1.4-PalindromePermutation.playground */,
+				B07750142046E828004182F1 /* 1.5-OneAway.playground */,
+				B07750182046E829004182F1 /* 1.6-StringCompression.playground */,
+				B07750152046E829004182F1 /* 1.7-RotateMatrix.playground */,
+				B07750162046E829004182F1 /* 1.8-ZeroMatrix.playground */,
+				B07750172046E829004182F1 /* 1.9-StringRotation.playground */,
+			);
+			path = ArraysStrings;
+			sourceTree = "<group>";
+		};
+		B07750192046E84E004182F1 /* LinkedLists */ = {
+			isa = PBXGroup;
+			children = (
+				B077501A2046EBA2004182F1 /* 2.1-RemoveDupes.playground */,
+				B07750212046EBA2004182F1 /* 2.2-ReturnKthToLast.playground */,
+				B07750202046EBA2004182F1 /* 2.3-DeleteMiddleNode.playground */,
+				B077501C2046EBA2004182F1 /* 2.4-Partition.playground */,
+				B077501F2046EBA2004182F1 /* 2.5-SumLists.playground */,
+				B077501E2046EBA2004182F1 /* 2.6-Palindrome.playground */,
+				B077501D2046EBA2004182F1 /* 2.7-Intersection.playground */,
+				B077501B2046EBA2004182F1 /* 2.8-LoopDetection.playground */,
+			);
+			path = LinkedLists;
+			sourceTree = "<group>";
+		};
+		B07750222046EBB5004182F1 /* StacksQueues */ = {
+			isa = PBXGroup;
+			children = (
+				B07750232046EBB5004182F1 /* 3.1-ThreeInOne.playground */,
+				B07750242046EBB5004182F1 /* 3.2-StackMin.playground */,
+				B07750252046EBB5004182F1 /* 3.3-StackOfPlates.playground */,
+				B07750262046EBB5004182F1 /* 3.4-QueueViaStacks.playground */,
+				B07750272046EBB5004182F1 /* 3.5-SortStack.playground */,
+				B07750282046EBB5004182F1 /* 3.6-AnimalShelter.playground */,
+			);
+			path = StacksQueues;
+			sourceTree = "<group>";
+		};
+		B07750292046EBB5004182F1 /* TreesGraphs */ = {
+			isa = PBXGroup;
+			children = (
+				B077502A2046EBB5004182F1 /* 4.1-RouteBetweenNodes.playground */,
+				B077502B2046EBB5004182F1 /* 4.10-CheckSubtree.playground */,
+				B077502C2046EBB5004182F1 /* 4.11-RandomNode.playground */,
+				B077502D2046EBB5004182F1 /* 4.12-PathsWithSum.playground */,
+				B077502E2046EBB5004182F1 /* 4.2-MinimalTree.playground */,
+				B077502F2046EBB5004182F1 /* 4.3-ListOfDepths.playground */,
+				B07750302046EBB5004182F1 /* 4.4-CheckBalanced.playground */,
+				B07750312046EBB5004182F1 /* 4.5-ValidateBST.playground */,
+				B07750322046EBB5004182F1 /* 4.6-Successor.playground */,
+				B07750332046EBB5004182F1 /* 4.7-BuildOrder.playground */,
+				B07750342046EBB5004182F1 /* 4.8-FirstCommonAncestor.playground */,
+				B07750352046EBB5004182F1 /* 4.9-BSTSequences.playground */,
+			);
+			path = TreesGraphs;
+			sourceTree = "<group>";
+		};
+		B07750362047040C004182F1 /* OOD */ = {
+			isa = PBXGroup;
+			children = (
+				B07750372047040C004182F1 /* 7.1-DeckOfCards.playground */,
+				B07750382047040C004182F1 /* 7.10-Minesweeper.playground */,
+				B07750392047040C004182F1 /* 7.11-FileSystem.playground */,
+				B077503A2047040C004182F1 /* 7.12-HashTable.playground */,
+				B077503B2047040C004182F1 /* 7.2-CallCenter.playground */,
+				B077503C2047040C004182F1 /* 7.3-JukeBox.playground */,
+				B077503D2047040C004182F1 /* 7.4-ParkingLot.playground */,
+				B077503E2047040C004182F1 /* 7.5-OnlineBookReader.playground */,
+				B077503F2047040C004182F1 /* 7.6-Jigsaw.playground */,
+				B07750402047040C004182F1 /* 7.7-ChatServer.playground */,
+				B07750412047040C004182F1 /* 7.8-Othello.playground */,
+				B07750422047040C004182F1 /* 7.9-CircularArray.playground */,
+			);
+			path = OOD;
+			sourceTree = "<group>";
+		};
+		B07750432047040C004182F1 /* SystemDesignScalability */ = {
+			isa = PBXGroup;
+			children = (
+				B07750442047040C004182F1 /* 9.1-StockData.playground */,
+				B07750452047040C004182F1 /* 9.2-SocialNetwork.playground */,
+				B07750462047040C004182F1 /* 9.3-WebCrawler.playground */,
+				B07750472047040C004182F1 /* 9.4-DuplicateURLs.playground */,
+				B07750482047040C004182F1 /* 9.5-Cache.playground */,
+				B07750492047040C004182F1 /* 9.6-SalesRank.playground */,
+				B077504A2047040C004182F1 /* 9.7-PersonalFinanceManager.playground */,
+				B077504B2047040C004182F1 /* 9.8-Pastebin.playground */,
+			);
+			path = SystemDesignScalability;
+			sourceTree = "<group>";
+		};
+		B077504C2047040D004182F1 /* BitManip */ = {
+			isa = PBXGroup;
+			children = (
+				B077504D2047040D004182F1 /* 5.1-Insertion.playground */,
+				B077504E2047040D004182F1 /* 5.2-BinaryToString.playground */,
+				B077504F2047040D004182F1 /* 5.3-FlipBitToWin.playground */,
+				B07750502047040D004182F1 /* 5.4-NextNumber.playground */,
+				B07750512047040D004182F1 /* 5.5-Debugger.playground */,
+				B07750522047040D004182F1 /* 5.6-Conversion.playground */,
+				B07750532047040D004182F1 /* 5.7-PairwiseSwap.playground */,
+				B07750542047040D004182F1 /* 5.8-DrawLine.playground */,
+			);
+			path = BitManip;
+			sourceTree = "<group>";
+		};
+		B07750552047040D004182F1 /* MathLogicPuzzles */ = {
+			isa = PBXGroup;
+			children = (
+				B07750562047040D004182F1 /* 6.1-TheHeavyPill.playground */,
+				B07750572047040D004182F1 /* 6.10-Poison.playground */,
+				B07750582047040D004182F1 /* 6.2-Basketball.playground */,
+				B07750592047040D004182F1 /* 6.3-Dominos.playground */,
+				B077505A2047040D004182F1 /* 6.4-AntsOnATriangle.playground */,
+				B077505B2047040D004182F1 /* 6.5-JugsOfWater.playground */,
+				B077505C2047040D004182F1 /* 6.6-Blue-EyedIsland.playground */,
+				B077505D2047040D004182F1 /* 6.7-TheApocalypse.playground */,
+				B077505E2047040D004182F1 /* 6.8-TheEggDropProblem.playground */,
+				B077505F2047040D004182F1 /* 6.9-100Lockers.playground */,
+			);
+			path = MathLogicPuzzles;
+			sourceTree = "<group>";
+		};
+		B07750602047040D004182F1 /* RescursionDynamicProgramming */ = {
+			isa = PBXGroup;
+			children = (
+				B07750612047040D004182F1 /* 8.1-TripleStep.playground */,
+				B07750622047040D004182F1 /* 8.10-PaintFill.playground */,
+				B07750632047040D004182F1 /* 8.11-Coins.playground */,
+				B07750642047040D004182F1 /* 8.12-EightQueens.playground */,
+				B07750652047040D004182F1 /* 8.13-StackOfBoxes.playground */,
+				B07750662047040D004182F1 /* 8.14-BooleanEvaluation.playground */,
+				B07750672047040D004182F1 /* 8.2-RobotInAGrid.playground */,
+				B07750682047040D004182F1 /* 8.3-MagicIndex.playground */,
+				B07750692047040D004182F1 /* 8.4-PowerSet.playground */,
+				B077506A2047040D004182F1 /* 8.5-RecursiveMultiply.playground */,
+				B077506B2047040D004182F1 /* 8.6-TowersOfHanoi.playground */,
+				B077506C2047040D004182F1 /* 8.7-PermutationsWithoutDups.playground */,
+				B077506D2047040D004182F1 /* 8.8-PerumtationsWithDupes.playground */,
+				B077506E2047040D004182F1 /* 8.9-Parens.playground */,
+			);
+			path = RescursionDynamicProgramming;
+			sourceTree = "<group>";
+		};
+		B077506F2047040D004182F1 /* SortingSearching */ = {
+			isa = PBXGroup;
+			children = (
+				B07750702047040D004182F1 /* 10.1-SortedMerge.playground */,
+				B07750712047040D004182F1 /* 10.10-RankFromStream.playground */,
+				B07750722047040D004182F1 /* 10.11-PeaksAndValleys.playground */,
+				B07750732047040D004182F1 /* 10.2-GroupAnagrams.playground */,
+				B07750742047040D004182F1 /* 10.3-SearchInRotatedArray.playground */,
+				B07750752047040D004182F1 /* 10.4-SortedSearchNoSize.playground */,
+				B07750762047040D004182F1 /* 10.5-SparseSearch.playground */,
+				B07750772047040D004182F1 /* 10.6-SortBigFile.playground */,
+				B07750782047040D004182F1 /* 10.7-MissingInt.playground */,
+				B07750792047040D004182F1 /* 10.8-FindDuplicates.playground */,
+				B077507A2047040D004182F1 /* 10.9-SortedMatrixSearch.playground */,
+			);
+			path = SortingSearching;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
