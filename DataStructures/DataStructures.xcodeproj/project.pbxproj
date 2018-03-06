@@ -62,7 +62,7 @@
 		B077500F2046E696004182F1 /* 1.2-CheckPermutation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.2-CheckPermutation.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750102046E696004182F1 /* 1.3-URLify.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.3-URLify.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750132046E828004182F1 /* 1.4-PalindromePermutation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.4-PalindromePermutation.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		B07750142046E828004182F1 /* 1.5-OneAway.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.5-OneAway.playground"; sourceTree = "<group>"; };
+		B07750142046E828004182F1 /* 1.5-OneAway.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.5-OneAway.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750152046E829004182F1 /* 1.7-RotateMatrix.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.7-RotateMatrix.playground"; sourceTree = "<group>"; };
 		B07750162046E829004182F1 /* 1.8-ZeroMatrix.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.8-ZeroMatrix.playground"; sourceTree = "<group>"; };
 		B07750172046E829004182F1 /* 1.9-StringRotation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.9-StringRotation.playground"; sourceTree = "<group>"; };
