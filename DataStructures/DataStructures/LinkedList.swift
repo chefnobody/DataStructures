@@ -8,19 +8,17 @@
 
 import Foundation
 
-public class ListNode<T: Comparable> {
+public class ListNode<T: Hashable> {
     var key: T
     var next: ListNode<T>?
-    var prev: ListNode<T>?
     
     public init(key: T) {
         self.key = key
         self.next = nil
-        self.prev = nil
     }
 }
 
-public class LinkedList<T: Comparable> {
+public class LinkedList<T: Hashable> {
     
     // MARK: - Public properties
     
@@ -50,24 +48,28 @@ public class LinkedList<T: Comparable> {
         
         // Create a new node and increment the counter
         let newNode = ListNode<T>(key: key)
-        counter += 1
         
         // Guard the empty list case.
         guard !isEmpty() else {
             head = newNode
+            counter += 1
+
             return newNode
         }
-    
+        
         // Head will never be empty at this point.
         var current: ListNode<T>? = head
         
         // Walk current pointer to end.
+        // You're at the end when current.next == nil
         while current?.next != nil {
-            current = current!.next
+            current = current?.next
         }
         
-        // Attach the new node.
+        // Attach the new node, increment counter.
         current?.next = newNode
+        counter += 1
+
         return newNode
     }
     
@@ -90,26 +92,6 @@ public class LinkedList<T: Comparable> {
         // We walked completely down the list
         // and didn't find our value.
         return false
-    }
-    
-    public func printKeys() -> String {
-        guard !isEmpty() else { return "List is empty!" }
-        
-        var current: ListNode<T>? = head
-        var keyString: String = ""
-        
-        while current != nil {
-            
-            if keyString.count > 0 {
-                keyString.append(" -> \(String(describing: current!.key))")
-            } else {
-                keyString.append("\(String(describing: current!.key))")
-            }
-            
-            current = current!.next
-        }
-        
-        return keyString
     }
     
     public func insert(key: T, at index: Int) {
@@ -173,6 +155,63 @@ public class LinkedList<T: Comparable> {
         // - removing after the head but before the tail
         // - removing at the tail
         // - removing at length + x should crash with out of bounds error
+    }
+    
+    // Returns true for success cases. Returns false otherwise.
+    public func removeDupes() -> Bool {
+        
+        // Empty lists and 1-length lists won't have dupes.
+        guard !isEmpty() && self.length > 1 else { return false }
+        
+        var prev: ListNode<T>? = head
+        var current: ListNode<T>? = head
+        var uniques: Set<T> = Set<T>()
+        var foundDupes: Bool = false
+        
+        while current != nil {
+            
+            if uniques.contains(current!.key) {
+                
+                // Remove node key found in set.
+                // moving pointers.
+                prev?.next = current!.next
+                current = current!.next
+                
+                // Think: delete current?
+                // Are we leaking a node object?
+                foundDupes = true
+            } else {
+                // Add new node key to set.
+                uniques.insert(current!.key)
+                
+                // move prev
+                prev = current
+                // move the current pointer
+                current = current!.next
+            }
+        }
+        
+        return foundDupes
+    }
+    
+    public func printKeys() -> String {
+        guard !isEmpty() else { return "List is empty!" }
+        
+        var current: ListNode<T>? = head
+        var keyString: String = ""
+        
+        while current != nil {
+            
+            if keyString.count > 0 {
+                keyString.append(" -> \(String(describing: current!.key))")
+            } else {
+                keyString.append("\(String(describing: current!.key))")
+            }
+            
+            current = current!.next
+        }
+        
+        return keyString
     }
     
     // MARK: - Private methods

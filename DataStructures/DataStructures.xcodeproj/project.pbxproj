@@ -67,7 +67,7 @@
 		B07750162046E829004182F1 /* 1.8-ZeroMatrix.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.8-ZeroMatrix.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750172046E829004182F1 /* 1.9-StringRotation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.9-StringRotation.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750182046E829004182F1 /* 1.6-StringCompression.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.6-StringCompression.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		B077501A2046EBA2004182F1 /* 2.1-RemoveDupes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.1-RemoveDupes.playground"; sourceTree = "<group>"; };
+		B077501A2046EBA2004182F1 /* 2.1-RemoveDupes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.1-RemoveDupes.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B077501B2046EBA2004182F1 /* 2.8-LoopDetection.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.8-LoopDetection.playground"; sourceTree = "<group>"; };
 		B077501C2046EBA2004182F1 /* 2.4-Partition.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.4-Partition.playground"; sourceTree = "<group>"; };
 		B077501D2046EBA2004182F1 /* 2.7-Intersection.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.7-Intersection.playground"; sourceTree = "<group>"; };
