@@ -342,5 +342,51 @@ class LinkedListTests: XCTestCase {
         XCTAssert(list.printKeys() == "1 -> 2 -> 3 -> 31 -> 6 -> 7 -> 8")
     }
     
+    func testSliceRightReturnsNilWhenListIsEmpty() {
+        let list = LinkedList<Int>()
+        XCTAssertNil(list.sliceRight(from: 4))
+    }
     
+    func testSliceRightReturnsNilWhenFromIndexIsOutOfBounds() {
+        let list = LinkedList<Int>()
+        list.append(key: 1)
+        list.append(key: 2)
+        list.append(key: 3)
+        list.append(key: 4)
+        list.append(key: 5)
+        list.append(key: 6)
+        XCTAssertNil(list.sliceRight(from: -4))
+        XCTAssertNil(list.sliceRight(from: 17))
+    }
+    
+    func testSliceRightReturnsHeadWhenSliceIndexIsZero() {
+        let list = LinkedList<Int>()
+        let head = list.append(key: 1)
+        list.append(key: 2)
+        list.append(key: 3)
+        list.append(key: 4)
+        list.append(key: 5)
+        list.append(key: 6)
+        XCTAssert(list.sliceRight(from: 0) == head)
+    }
+    
+    func testSliceRightSlicesListWhenSliceIndexIsGreaterThanZero() {
+        let list = LinkedList<Int>()
+        list.append(key: 1)
+        list.append(key: 2)
+        list.append(key: 3)
+        list.append(key: 4)
+        let newHead = list.append(key: 5)
+        list.append(key: 6)
+        list.append(key: 7)
+        list.append(key: 8)
+        list.append(key: 9)
+        list.append(key: 10)
+        
+        let newList = LinkedList<Int>(head: newHead, length: 6)
+        
+        XCTAssert(list.sliceRight(from: 4) == newHead)
+        XCTAssert(list.printKeys() == "1 -> 2 -> 3 -> 4")
+        XCTAssert(newList.printKeys() == "5 -> 6 -> 7 -> 8 -> 9 -> 10")
+    }
 }

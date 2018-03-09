@@ -8,13 +8,18 @@
 
 import Foundation
 
-public class ListNode<T: Hashable> {
+public class ListNode<T: Hashable>: Equatable {
     var key: T
     var next: ListNode<T>?
     
     public init(key: T) {
         self.key = key
         self.next = nil
+    }
+
+    // MARK: - Equatable Conformance
+    public static func == <T>(lhs: ListNode<T>, rhs: ListNode<T>) -> Bool {
+        return lhs.key == rhs.key && lhs.next == rhs.next
     }
 }
 
@@ -36,6 +41,13 @@ public class LinkedList<T: Hashable> {
     public init() {
         head = nil
         counter = 0
+    }
+    
+    // Consumer could fudge w/ the length. Would be safer to
+    // calculate the length ourselves. We'll be trusting for now.
+    public init(head: ListNode<T>, length: Int) {
+        self.head = head
+        self.counter = length
     }
     
     // MARK: - Public methods
@@ -158,6 +170,14 @@ public class LinkedList<T: Hashable> {
     }
     
     // Returns true for success cases. Returns false otherwise.
+    //
+    // Follow up?
+    // To do this in 0(1) space (w/o a hash or buffer) you could
+    // keep two pointers, one for each index and a second to run
+    // the lenght of the list checking for dupes of the key at the
+    // current pointer. That would be 0(n^2) though.
+    // Each time you move the main index you iterate only through
+    // the remaining nodes.
     public func removeDupes() -> Bool {
         
         // Empty lists and 1-length lists won't have dupes.
@@ -165,7 +185,7 @@ public class LinkedList<T: Hashable> {
         
         var prev: ListNode<T>? = head
         var current: ListNode<T>? = head
-        var uniques: Set<T> = Set<T>()
+        var uniques: Set<T> = Set<T>()          // temp buffer
         var foundDupes: Bool = false
         
         while current != nil {
@@ -175,7 +195,6 @@ public class LinkedList<T: Hashable> {
                 // Remove node key found in set.
                 // moving pointers.
                 prev?.next = current!.next
-                current = current!.next
                 
                 // Think: delete current?
                 // Are we leaking a node object?
@@ -186,14 +205,50 @@ public class LinkedList<T: Hashable> {
                 
                 // move prev
                 prev = current
-                // move the current pointer
-                current = current!.next
             }
+            
+            current = current!.next
+
         }
         
         return foundDupes
     }
+
+    // Takes an index, and slices off each node from that index
+    // through the end of the list.
+    public func sliceRight(from sliceIndex: Int) -> ListNode<T>? {
+        
+        // Can't slice an empty list.
+        guard !isEmpty() else { return nil }
+        
+        // Can't slice outside the bounds of our list.
+        guard (0..<length).contains(sliceIndex) else { return nil }
+        
+        // Low hanging fruit.
+        if sliceIndex == 0 { return head }
+        
+        var currentIndex: Int = 0
+        var previous: ListNode<T>? = head
+        var current: ListNode<T>? = head
+        
+        while current?.next != nil {
+            
+            if currentIndex == sliceIndex {
+                // current will be at slice point
+                // sever the pointer from previous to current
+                previous?.next = nil
+                break
+            }
+            
+            previous = current
+            current = current!.next
+            currentIndex += 1
+        }
+        
+        return current
+    }
     
+    // Prints each key with an arrow between them.
     public func printKeys() -> String {
         guard !isEmpty() else { return "List is empty!" }
         
