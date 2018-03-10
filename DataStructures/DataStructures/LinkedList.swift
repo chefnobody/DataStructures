@@ -285,8 +285,31 @@ public class LinkedList<T: Hashable> {
     // Result: a -> b -> d -> e -> f
     // Returns true if succeeded, false otherwise.
     //
+    // Assume all keys in the list are unique
+    // Assumes key is not at the head or tail.
     public func deleteFromMiddle(key: T) -> Bool {
         
+        guard !isEmpty() else { return false }
+        
+        guard head?.key != key else { return false }
+        
+        // check 1..<n for matching key, remove that node.
+        var previous: ListNode<T>? = head
+        var current: ListNode<T>? = head
+        
+        while current?.next != nil {
+            if current!.key == key {
+                // key found somewhere in the middle.
+                // chop it out of the list.
+                previous?.next = current!.next
+                return true
+            }
+            
+            previous = current
+            current = current!.next
+        }
+        
+        // no key found in the middle
         return false
     }
     

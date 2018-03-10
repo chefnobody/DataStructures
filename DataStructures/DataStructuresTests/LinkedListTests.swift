@@ -445,4 +445,56 @@ class LinkedListTests: XCTestCase {
         XCTAssert(list.printKeys() == "1 -> 2 -> 3 -> 4")
         XCTAssert(newList.printKeys() == "5 -> 6 -> 7 -> 8 -> 9 -> 10")
     }
+    
+    func testDeleteFromMiddleReturnsFalseWhenListIsEmpty() {
+        let list = LinkedList<Int>()
+        XCTAssertFalse(list.deleteFromMiddle(key: 31))
+    }
+    
+    func testDeleteFromMiddleReturnsFalseWhenKeyMatchesKeyAtHead() {
+        let list = LinkedList<Int>()
+        list.append(key: 31)
+        list.append(key: 35)
+        list.append(key: 37)
+        list.append(key: 38)
+        XCTAssertFalse(list.deleteFromMiddle(key: 31))
+    }
+    
+    func testDeleteFromMiddleReturnsFalseWhenKeyMatchesKeyAtTail() {
+        let list = LinkedList<Int>()
+        list.append(key: 31)
+        list.append(key: 35)
+        list.append(key: 37)
+        list.append(key: 38)
+        list.append(key: 39)
+        list.append(key: 40)
+        XCTAssertFalse(list.deleteFromMiddle(key: 40))
+    }
+    
+    func testDeleteFromMiddleReturnsTrueWhenKeyIsInMiddle() {
+        let list = LinkedList<Int>()
+        list.append(key: 31)
+        list.append(key: 35)
+        list.append(key: 37)
+        list.append(key: 38)
+        list.append(key: 39)
+        list.append(key: 40)
+        XCTAssertTrue(list.deleteFromMiddle(key: 37))
+        XCTAssert(list.printKeys() == "31 -> 35 -> 38 -> 39 -> 40")
+        
+        XCTAssertTrue(list.deleteFromMiddle(key: 39))
+        XCTAssert(list.printKeys() == "31 -> 35 -> 38 -> 40")
+        
+        XCTAssertTrue(list.deleteFromMiddle(key: 38))
+        XCTAssert(list.printKeys() == "31 -> 35 -> 40")
+        
+        XCTAssertTrue(list.deleteFromMiddle(key: 35))
+        XCTAssert(list.printKeys() == "31 -> 40")
+        
+        // Can't delete head or tail:
+        XCTAssertFalse(list.deleteFromMiddle(key: 31))
+        XCTAssertFalse(list.deleteFromMiddle(key: 40))
+        
+        XCTAssert(list.printKeys() == "31 -> 40")
+    }
 }
