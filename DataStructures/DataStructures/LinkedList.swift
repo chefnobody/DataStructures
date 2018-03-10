@@ -214,6 +214,36 @@ public class LinkedList<T: Hashable> {
         return foundDupes
     }
 
+    // Given K, find the Kth to last element.
+    // ex: K == 2, return the 2nd to last element.
+    // ex: K == 5, return the 5th to last element.
+    public func findKthToLast(k: Int) -> ListNode<T>? {
+        
+        // K is not zero-based. Needs to be converted.
+        
+        // Empty list?
+        guard !isEmpty() else { return nil }
+        
+        // Ensure k is in bounds of our list's length (inclusively)
+        // because k is not a zero-based input.
+        guard (0...length).contains(k) else { return nil }
+        
+        let targetIndex = length - k
+        var currentIndex: Int = 0
+        var current: ListNode<T>? = head
+        
+        // Walk the list until you find the target index.
+        while current?.next != nil {
+            if targetIndex == currentIndex {
+                break
+            }
+            current = current?.next
+            currentIndex += 1
+        }
+        
+        return current
+    }
+    
     // Takes an index, and slices off each node from that index
     // through the end of the list.
     public func sliceRight(from sliceIndex: Int) -> ListNode<T>? {

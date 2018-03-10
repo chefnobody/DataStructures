@@ -342,6 +342,62 @@ class LinkedListTests: XCTestCase {
         XCTAssert(list.printKeys() == "1 -> 2 -> 3 -> 31 -> 6 -> 7 -> 8")
     }
     
+    func testFindKthToLastReturnsNiWhenListIsEmpty() {
+        let list = LinkedList<Int>()
+        XCTAssertNil(list.findKthToLast(k: 5))
+    }
+    
+    func testFindKthToLastReturnsNilWhenKIsOutOfBounds() {
+        let list = LinkedList<Int>()
+        list.append(key: 1)
+        list.append(key: 2)
+        list.append(key: 3)
+        list.append(key: 4)
+        list.append(key: 5)
+        XCTAssertNil(list.findKthToLast(k: -2))
+        XCTAssertNil(list.findKthToLast(k: 10))
+    }
+    
+    func testFindKthToLastReturnsTailWhenKthToLastIsZero() {
+        let list = LinkedList<Int>()
+        list.append(key: 1)
+        list.append(key: 2)
+        list.append(key: 3)
+        list.append(key: 4)
+        let tail = list.append(key: 5)
+        XCTAssert(list.findKthToLast(k: 0) == tail)
+    }
+    
+    func testFindKthToLastReturnsHeadWhenKthToLastIsLenghtOfList() {
+        let list = LinkedList<Int>()
+        let head = list.append(key: 1)
+        list.append(key: 2)
+        list.append(key: 3)
+        list.append(key: 4)
+        list.append(key: 5)
+        XCTAssert(list.findKthToLast(k: list.length) == head)
+    }
+    
+    func testFindKthToLastReturnsCorrectNode() {
+        let list = LinkedList<Int>()
+        list.append(key: 1)
+        let seventhToLast = list.append(key: 2)
+        let sixthToLast = list.append(key: 3)
+        let fifthToLast = list.append(key: 4)
+        let fourthToLast = list.append(key: 5)
+        let thirdToLast = list.append(key: 6)
+        let secondToLast = list.append(key: 7)
+        list.append(key: 8)
+        XCTAssert(list.findKthToLast(k: 2) == secondToLast)
+        XCTAssert(list.findKthToLast(k: 3) == thirdToLast)
+        XCTAssert(list.findKthToLast(k: 4) == fourthToLast)
+        XCTAssert(list.findKthToLast(k: 5) == fifthToLast)
+        XCTAssert(list.findKthToLast(k: 6) == sixthToLast)
+        XCTAssert(list.findKthToLast(k: 7) == seventhToLast)
+    }
+
+    
+    
     func testSliceRightReturnsNilWhenListIsEmpty() {
         let list = LinkedList<Int>()
         XCTAssertNil(list.sliceRight(from: 4))
