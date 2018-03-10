@@ -277,6 +277,18 @@ public class LinkedList<T: Hashable> {
         
         return current
     }
+
+    // Deletes a node in the middle (i.e. any node but the first
+    // or last node, and not necessarily in the middle.).
+    // Given: a -> b -> c -> d -> e -> f
+    // Ex: Input "c"
+    // Result: a -> b -> d -> e -> f
+    // Returns true if succeeded, false otherwise.
+    //
+    public func deleteFromMiddle(key: T) -> Bool {
+        
+        return false
+    }
     
     // Prints each key with an arrow between them.
     public func printKeys() -> String {
