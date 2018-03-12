@@ -477,3 +477,89 @@ extension LinkedList where T: Comparable {
         return LinkedList<T>(head: beforeStart!, length: originalLength)
     }
 }
+
+// Making this a global func because it doesn't make sense to hang this off LinkedList, atm.
+/*
+ Considerations:
+ - What if lhs is longer than rhs? What if rhs is longer than lhs? Figure out which is longer?
+ - Move them both into arrays, from there you know their lengths and don't have to muck w/ pointers.
+ */
+public func sumLists(lhs: ListNode<Int>, rhs: ListNode<Int>) -> LinkedList<Int>? {
+    
+    // Important to know which is longer for mathings.
+    // Walk down each list with pointers 0(n) + 0(m) time and 0(n) and 0(m) space.
+    // Copying into longer/shorter is a bit wasteful.
+    
+    var leftCurrent: ListNode<Int>? = lhs
+    var left = [Int]()
+
+    while leftCurrent != nil {
+        left.append(leftCurrent!.key)
+        leftCurrent = leftCurrent!.next
+    }
+    
+    // now the right...
+    var rightCurrent: ListNode<Int>? = rhs
+    var right = [Int]()
+    
+    while rightCurrent != nil {
+        right.append(rightCurrent!.key)
+        rightCurrent = rightCurrent!.next
+    }
+    
+    // Which is longer/shorter/
+    let longer: [Int] = left.count >= right.count ? left : right
+    let shorter: [Int] = left.count < right.count ? left : right
+    
+    var sum: [Int] = [Int]()
+    var localSum: Int = 0
+    var carryOne: Bool = false
+    
+    // Add the items at each index. Carrying the one if necessary.
+    for i in 0..<longer.count {
+        
+        // Check out of bounds on shorter list
+        if i < shorter.count {
+            localSum = longer[i] + shorter[i]
+            
+            // Check for carried one digit.
+            if carryOne {
+                localSum += 1
+                carryOne = false
+            }
+            
+            // This might be >= 10, but we just want the ten's digit
+            // and to flag the fact that we're "carrying" the one
+            // to the next add operation.
+            // Hint: remember elementary school addition
+            if localSum >= 10 {
+                carryOne = true
+                localSum = abs(10 - localSum)
+            }
+            
+        } else {
+            localSum = longer[i]
+            
+            // Check for carried one digit.
+            if carryOne {
+                localSum += 1
+                carryOne = false
+            }
+        }
+        
+        sum.append(localSum)
+    }
+    
+    print("longer", longer)
+    print("shorter", shorter)
+    print("sum", sum)
+
+    // return sum as LinkedList
+    let result = LinkedList<Int>()
+    sum.forEach { n in
+        result.append(key: n)
+    }
+
+    return result
+}
+
