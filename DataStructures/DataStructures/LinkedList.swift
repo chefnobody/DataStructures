@@ -9,7 +9,8 @@
 import Foundation
 
 public class ListNode<T: Hashable>: Equatable {
-    var key: T
+    public var key: T
+    
     var next: ListNode<T>?
     
     public init(key: T) {
@@ -169,6 +170,61 @@ public class LinkedList<T: Hashable> {
         // - removing at length + x should crash with out of bounds error
     }
     
+    // Prints each key with an arrow between them.
+    public func printKeys() -> String {
+        guard !isEmpty() else { return "List is empty!" }
+        
+        var current: ListNode<T>? = head
+        var keyString: String = ""
+        
+        while current != nil {
+            
+            if keyString.count > 0 {
+                keyString.append(" -> \(String(describing: current!.key))")
+            } else {
+                keyString.append("\(String(describing: current!.key))")
+            }
+            
+            current = current!.next
+        }
+        
+        return keyString
+    }
+    
+    // MARK: - Private methods
+    
+    private func isEmpty() -> Bool {
+        return head == nil
+    }
+
+    /*
+     Traverses the list of nodes until
+     it hits one whose next pointer is nil.
+     This should always be the last node.
+     */
+    private func walkToEnd() -> ListNode<T>? {
+        
+        guard !isEmpty() else {
+            return nil
+        }
+        
+        // Head will never be empty at this point.
+        var current: ListNode<T>? = head
+        
+        // Walk current pointer to end.
+        // Will kick out when the current pointer's
+        // next is nil.
+        while current?.next != nil {
+            current = current!.next
+        }
+        
+        return current
+    }
+}
+
+// Extensions for solving test questions ...
+extension LinkedList where T: Comparable {
+    
     // Returns true for success cases. Returns false otherwise.
     //
     // Follow up?
@@ -208,12 +264,12 @@ public class LinkedList<T: Hashable> {
             }
             
             current = current!.next
-
+            
         }
         
         return foundDupes
     }
-
+    
     // Given K, find the Kth to last element.
     // ex: K == 2, return the 2nd to last element.
     // ex: K == 5, return the 5th to last element.
@@ -277,7 +333,7 @@ public class LinkedList<T: Hashable> {
         
         return current
     }
-
+    
     // Deletes a node in the middle (i.e. any node but the first
     // or last node, and not necessarily in the middle.).
     // Given: a -> b -> c -> d -> e -> f
@@ -313,54 +369,111 @@ public class LinkedList<T: Hashable> {
         return false
     }
     
-    // Prints each key with an arrow between them.
-    public func printKeys() -> String {
-        guard !isEmpty() else { return "List is empty!" }
+    // Partitions the list around a key value such that:
+    // - All nodes < key come before all nodes >= key.
+    // - If key exists in the list, the values of key only need to be
+    //   after the elements < key.
+    // - The partition element key can appear anywhere in the "right partition";
+    //   it does not need to appear between the left and right partitions.
+    //
+    // Considerations:
+    //  - What if all the keys are less than the partition?
+    //  - What if the partition key exists in the list. Where do you put it?
+    //
+    // Approaches:
+    //  - 1. create two lists, greaterThan and lessThan, add appropriate values to those
+    //    new lists. merge the lists and return the final merge.
+    //
+    //  - 2. keep a head/tail pointer and prepend less than K values to the head. append
+    //    greater than values to the tail. This only works if the original order of the keys
+    //    doesn't matter.
+    //
+    public func partition(around key: T) -> LinkedList<T>? {
         
-        var current: ListNode<T>? = head
-        var keyString: String = ""
-        
-        while current != nil {
-            
-            if keyString.count > 0 {
-                keyString.append(" -> \(String(describing: current!.key))")
-            } else {
-                keyString.append("\(String(describing: current!.key))")
-            }
-            
-            current = current!.next
-        }
-        
-        return keyString
-    }
-    
-    // MARK: - Private methods
-    
-    private func isEmpty() -> Bool {
-        return head == nil
-    }
-
-    /*
-     Traverses the list of nodes until
-     it hits one whose next pointer is nil.
-     This should always be the last node.
-     */
-    private func walkToEnd() -> ListNode<T>? {
-        
+        // Empty case.
         guard !isEmpty() else {
             return nil
         }
         
-        // Head will never be empty at this point.
-        var current: ListNode<T>? = head
+        let originalLength = length
         
-        // Walk current pointer to end.
-        // Will kick out when the current pointer's
-        // next is nil.
-        while current?.next != nil {
-            current = current!.next
+        var node = head
+        var partitionHead: ListNode<T>? = node
+        var partitionTail: ListNode<T>? = node
+        
+        // walks down the given node
+        // prepending or appending the current node.
+        while node != nil {
+            let next = node!.next
+            
+            if node!.key < key {
+                node!.next = partitionHead
+                partitionHead = node
+            } else {
+                partitionTail!.next = node
+                partitionTail = node
+            }
+
+            // move node down the list.
+            node = next
         }
         
-        return current
+        partitionTail?.next = nil
+        
+        return LinkedList<T>(head: partitionHead!, length: originalLength)
+    }
+
+    // Lots of explicitly unwrapping of things happening.
+    public func partition2(around key: T) -> LinkedList<T>? {
+    
+        // Empty case.
+        guard !isEmpty() else {
+            return nil
+        }
+        
+        let originalLength = length
+        
+        var beforeStart: ListNode<T>? = nil
+        var beforeEnd: ListNode<T>? = nil
+        var afterStart: ListNode<T>? = nil
+        var afterEnd: ListNode<T>? = nil
+        var node = head
+        
+        while node != nil {
+            let next: ListNode<T>? = node!.next
+            node!.next = nil
+            
+            if node!.key < key {
+                // insert node into end of before
+                if beforeStart == nil {
+                    beforeStart = node
+                    beforeEnd = beforeStart
+                } else {
+                    beforeEnd?.next = node
+                    beforeEnd = node
+                }
+                
+            } else {
+                if afterStart == nil {
+                    afterStart = node
+                    afterEnd = afterStart
+                } else {
+                    afterEnd?.next = node
+                    afterEnd = node
+                }
+            }
+
+            node = next
+        }
+        
+        // There were no values found to be less than the key.
+        if beforeStart == nil {
+            return LinkedList<T>(head: afterStart!, length: originalLength)
+        }
+        
+        // Connect the lists.
+        beforeEnd!.next = afterStart
+        
+        return LinkedList<T>(head: beforeStart!, length: originalLength)
     }
 }

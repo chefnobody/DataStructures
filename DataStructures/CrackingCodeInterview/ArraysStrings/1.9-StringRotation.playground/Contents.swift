@@ -41,7 +41,7 @@ extension String {
         // Avoid unecessarily rotating more than we need:
         let cappedOffset = offset % self.count
         
-        for i in 0..<cappedOffset {
+        for _ in 0..<cappedOffset {
             let char = self.removeLast()
             self.insert(char, at: self.startIndex)
         }

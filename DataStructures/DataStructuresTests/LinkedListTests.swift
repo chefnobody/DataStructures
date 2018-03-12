@@ -497,4 +497,43 @@ class LinkedListTests: XCTestCase {
         
         XCTAssert(list.printKeys() == "31 -> 40")
     }
+    
+    func testPartitionReturnsPartitionedList() {
+        let list = LinkedList<Int>()
+        list.append(key: 3)
+        list.append(key: 5)
+        list.append(key: 8)
+        list.append(key: 5)
+        list.append(key: 10)
+        list.append(key: 2)
+        list.append(key: 1)
+        XCTAssert(list.printKeys() == "3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1")
+        
+        // This api is wacky. Maybe doesn't need to be
+        // an extension. The LinkedList class is hard to use
+        // here, too.
+        let partitionedList = list.partition(around: 5)
+        let keys = partitionedList!.printKeys()
+        XCTAssert(keys == "1 -> 2 -> 3 -> 5 -> 8 -> 5 -> 10")
+        // Book says this should be the output:
+        // XCTAssert(keys == "3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8")
+    }
+    
+    func testPartition2ReturnsPointerToHeadOfPartitionedList() {
+        let list = LinkedList<Int>()
+        list.append(key: 3)
+        list.append(key: 5)
+        list.append(key: 8)
+        list.append(key: 5)
+        list.append(key: 10)
+        list.append(key: 2)
+        list.append(key: 1)
+        XCTAssert(list.printKeys() == "3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1")
+
+        let partitionedList = list.partition2(around: 5)
+        let keys = partitionedList!.printKeys()
+        XCTAssert(keys == "3 -> 2 -> 1 -> 5 -> 8 -> 5 -> 10")
+        // Book says this should be the output:
+        // XCTAssert(keys == "3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8")
+    }
 }

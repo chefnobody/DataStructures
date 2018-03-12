@@ -17,6 +17,8 @@ let numbers = [0, 10, 8, 10, 5, 6, 9, 0, 1, 2, 4, 3, 4]
 let list = LinkedList<Int>()
 numbers.forEach { list.append(key: $0) }
 print(list.printKeys())
+list.removeDupes()
+print(list.printKeys())
 
 /*
  - Considerations:

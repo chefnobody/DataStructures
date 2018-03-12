@@ -9,7 +9,7 @@
 import Foundation
 
 public class MinHeap<T> {
-    var root: BinaryTreeNode<T>?
+    var root: BSTNode<T>?
     
     /*
      - Inserting should always start at the bottom all the way to the right.
