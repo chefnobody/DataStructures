@@ -1,6 +1,7 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
+import DataStructures
 
 /*
  Intersection:
@@ -14,3 +15,28 @@ import UIKit
     - A zipper meeting at some point is the point where it intersects. Think: Y
     - Intersection is not a cross X, or like the intersection of a street.
  */
+
+// Build a list
+let list = LinkedList<Int>()
+list.append(key: 44)
+list.append(key: 71)
+list.append(key: 189)
+
+let thirtyOne = list.append(key: 31)
+let ninety = list.append(key: 90)
+let eight = list.append(key: 8)
+let fifteen = list.append(key: 15)
+let fourty = list.append(key: 40)
+
+// Build a list by hand
+let otherHead = ListNode<Int>(key: 31)
+otherHead.next = thirtyOne
+
+// Ensure they intersect
+list.intersects(with: otherHead) === thirtyOne
+
+// Ensure chain pointers are also the same
+thirtyOne.next === ninety
+ninety.next === eight
+eight.next === fifteen
+fifteen.next === fourty

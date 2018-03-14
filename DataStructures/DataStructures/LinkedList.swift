@@ -10,8 +10,7 @@ import Foundation
 
 public class ListNode<T: Hashable>: Equatable {
     public var key: T
-    
-    var next: ListNode<T>?
+    public var next: ListNode<T>?
     
     public init(key: T) {
         self.key = key
