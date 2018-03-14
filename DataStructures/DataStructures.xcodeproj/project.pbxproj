@@ -28,6 +28,8 @@
 		B077508120476352004182F1 /* MinHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077508020476352004182F1 /* MinHeap.swift */; };
 		B077508320484789004182F1 /* GraphList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077508220484789004182F1 /* GraphList.swift */; };
 		B077508620484AA5004182F1 /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077508520484AA5004182F1 /* GraphTests.swift */; };
+		B0F594F52058114A007EB61B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0774FB92040FACE004182F1 /* Stack.swift */; };
+		B0F594F620581150007EB61B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0774FB72040FAC3004182F1 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +74,8 @@
 		B077501A2046EBA2004182F1 /* 2.1-RemoveDupes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.1-RemoveDupes.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B077501B2046EBA2004182F1 /* 2.8-LoopDetection.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.8-LoopDetection.playground"; sourceTree = "<group>"; };
 		B077501C2046EBA2004182F1 /* 2.4-Partition.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.4-Partition.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		B077501D2046EBA2004182F1 /* 2.7-Intersection.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.7-Intersection.playground"; sourceTree = "<group>"; };
-		B077501E2046EBA2004182F1 /* 2.6-Palindrome.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.6-Palindrome.playground"; sourceTree = "<group>"; };
+		B077501D2046EBA2004182F1 /* 2.7-Intersection.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.7-Intersection.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B077501E2046EBA2004182F1 /* 2.6-Palindrome.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.6-Palindrome.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B077501F2046EBA2004182F1 /* 2.5-SumLists.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.5-SumLists.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750202046EBA2004182F1 /* 2.3-DeleteMiddleNode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.3-DeleteMiddleNode.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750212046EBA2004182F1 /* 2.2-ReturnKthToLast.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.2-ReturnKthToLast.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -578,7 +580,9 @@
 				B077500B2044EF27004182F1 /* UnicodeModularHash.swift in Sources */,
 				B07750012041E79F004182F1 /* LinkedList.swift in Sources */,
 				B0774FAC2040FA51004182F1 /* DataStructuresTests.swift in Sources */,
+				B0F594F52058114A007EB61B /* Stack.swift in Sources */,
 				B0775003204360CB004182F1 /* LinkedListTests.swift in Sources */,
+				B0F594F620581150007EB61B /* Queue.swift in Sources */,
 				B0577BA32054BE7800994214 /* BinarySearchTreeTests.swift in Sources */,
 				B0774FC22040FAF6004182F1 /* QueueTests.swift in Sources */,
 				B077508620484AA5004182F1 /* GraphTests.swift in Sources */,

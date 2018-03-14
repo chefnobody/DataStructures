@@ -476,6 +476,122 @@ extension LinkedList where T: Comparable {
         
         return LinkedList<T>(head: beforeStart!, length: originalLength)
     }
+
+    // Returns true if the list is a palindrome false otherwise.
+    // Approaches:
+    // - iterate through the list and put each key into an array.
+    // - reverse the array. (using a stack means you don't have to reverse, I think)
+    // - iterate again through the list and compare each element
+    //   against its companion in the list.
+    //
+    public func isPalindrome() -> Bool {
+        
+        guard !isEmpty() else { return false }
+        
+        let stack = Stack<T>()
+        
+        // head pointer
+        var current: ListNode<T>? = head
+        
+        // Push things onto stack.
+        while current != nil {
+            stack.push(key: current!.key)
+            current = current!.next
+        }
+        
+        print(stack)
+        
+        // start over at head again.
+        current = head
+        
+        while current != nil {
+            // if any key in the stack
+            // doesn't match the key in the list
+            // this can't be a palindrome
+            if stack.pop() != current!.key {
+                return false
+            }
+            
+            current = current!.next
+        }
+
+        
+        return true
+    }
+
+    /*
+    Returns true if the current linked list intersects with the provided
+    list at any point. The lists intersect if they connect with one another
+    at some point, forming a Y shape. Put another way, they each have two
+    nodes in common that point at the same node reference.
+
+    Issues:
+    - Lists may not be the same length, so we can't walk reliably
+      down them each one node a time.
+    - What if the lists don't store the same type key?
+    - What if they intersect at the head?
+    - What if they intersect at the tail?
+
+     Notes:
+     - Intersecting linked lists will always have the same last nodes
+       because of their being intersected. That's one way to tell quickly.
+       No common tail node? No intersection.
+     - Can optimize my advancing the pointer of the longer list by the
+       difference of the lengths. This is safe and they are not intersections
+       because there aren't nodes in the other list that can be compared
+       against.
+     
+    Approaches:
+    - Walk down self's list and compare each node's next pointer,
+      with each of the pointers in the other list, one at a time.
+      this is 0(n^2) complexity. Not awesome.
+    
+     Hash?
+    - use a hash of the list, its count and position in the list?
+       the hash would be a storage of all the unique pointers and where
+     they intersect or are duped, you'll have count == 2.
+     
+     Set?
+     - Put each node in the list into a set, the just walk down the second
+     list checking for nodes in the set, the first match you find is the intersecting node.
+     
+    */
+    public func intersects(with otherHead: ListNode<T>) -> ListNode<T>? {
+        
+        // Guard the two empty cases.
+        guard !isEmpty() else { return nil }
+        guard otherHead.next != nil else { return nil }
+        
+        // Guard the head intersection case.
+        guard head != otherHead else { return head }
+        
+        var current: ListNode<T>? = head
+        var currentOther: ListNode<T>? = otherHead
+        
+        // Walk down self O(n)
+        while current != nil {
+            
+            // Walk down the other list O(n)
+            while currentOther != nil {
+                
+                // Compare current and current other's memory addresses.
+                // If they're the same, we've got a match.
+                if current === currentOther {
+                    return current
+                }
+                
+                currentOther = currentOther?.next
+            }
+            
+            // Move currentOther back to the head
+            currentOther = otherHead
+            
+            current = current?.next
+        }
+        
+        // No match found :-(
+        return nil
+    }
 }
 
 // Making this a global func because it doesn't make sense to hang this off LinkedList, atm.
@@ -562,4 +678,6 @@ public func sumLists(lhs: ListNode<Int>, rhs: ListNode<Int>) -> LinkedList<Int>?
 
     return result
 }
+
+
 

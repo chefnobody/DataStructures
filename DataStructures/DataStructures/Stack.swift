@@ -8,18 +8,23 @@
 
 import Foundation
 
-fileprivate class Node<T> {
-    var key:T?
-    var next:Node?
+public class StackNode<T: Hashable> {
+    var key: T
+    var next: StackNode?
+    init(key: T) {
+        self.key = key
+    }
 }
 
 // Generic stack structure for ordering things. Rules: First in, last out.
 // Think: stack of dirty dishes
+// Useful for reversing a string or an array.
+// - or managing the nodes that have been visited in a tree/graph, perhaps?
 //
 // Adding items 0(1) constant time. Why? You're always pushing onto the the head.
 // Removing items 0(1) constant time. Why? You're always popping off the head.
 //
-public class Stack<T> {
+public class Stack<T: Hashable> {
 
     // MARK: - Public Properties
     
@@ -29,11 +34,11 @@ public class Stack<T> {
 
     // MARK: - Stored Properties
     
-    private var top: Node<T>
+    private var top: StackNode<T>?
     private var counter: Int
     
     public init() {
-        top = Node()
+        top = nil
         counter = 0
     }
     
@@ -45,12 +50,11 @@ public class Stack<T> {
         
         // Empty list, case
         guard !isEmpty() else {
-            top.key = key
+            top = StackNode<T>(key: key)
             return
         }
         
-        let newNode = Node<T>()
-        newNode.key = key
+        let newNode = StackNode<T>(key: key)
         
         // Swap the new node with the top node.
         newNode.next = top
@@ -60,25 +64,25 @@ public class Stack<T> {
     // Also happens in O(1) "constant" time.
     @discardableResult public func pop() -> T? {
         
-        guard let key = top.key else {
+        guard let key = top?.key else {
             return nil
         }
         
         counter -= 1
         
         // Move the head to the next node
-        if let nextNode = top.next {
+        if let nextNode = top?.next {
             top = nextNode
         } else {
             // Otherwise, nil out the head's key.
-            top.key = nil
+            top = nil
         }
         
         return key
     }
     
     public func peek() -> T? {
-        return top.key
+        return top?.key
     }
     
     public func isEmpty() -> Bool {
@@ -90,11 +94,11 @@ public class Stack<T> {
             return "Stack is empty!"
         }
         
-        var keys = Array<T>()
-        var current: Node<T>? = top
+        var keys = [T]()
+        var current: StackNode<T>? = top
         
         while current != nil {
-            keys.append(current!.key!)
+            keys.append(current!.key)
             current = current?.next
         }
         

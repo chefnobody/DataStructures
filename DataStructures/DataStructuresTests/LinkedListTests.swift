@@ -536,4 +536,86 @@ class LinkedListTests: XCTestCase {
         // Book says this should be the output:
         // XCTAssert(keys == "3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8")
     }
+    
+    func testIsPalindromeReturnsFalseWhenListIsNotAPalindrome() {
+        let list = LinkedList<String>()
+        list.append(key: "p")
+        list.append(key: "i")
+        list.append(key: "z")
+        list.append(key: "z")
+        list.append(key: "a")
+        list.append(key: "!")
+        XCTAssertFalse(list.isPalindrome())
+    }
+
+    func testIsPalindromeReturnsTrueWhenListIsAPalindrome() {
+        let list = LinkedList<String>()
+        list.append(key: "t")
+        list.append(key: "a")
+        list.append(key: "c")
+        list.append(key: "o")
+        list.append(key: "c")
+        list.append(key: "a")
+        list.append(key: "t")
+        XCTAssertTrue(list.isPalindrome())
+    }
+    
+    func testIntersectsReturnsNilWhenListIsEmpty() {
+        let list = LinkedList<Int>()
+        let otherHead = ListNode<Int>(key: 31)
+        XCTAssertNil(list.intersects(with: otherHead))
+    }
+    
+    func testIntersectsReturnsNilWhenOtherListHasOnlyOneNode() {
+        let list = LinkedList<Int>()
+        list.append(key: 17)
+        let otherHead = ListNode<Int>(key: 31)
+        XCTAssertNil(list.intersects(with: otherHead))
+    }
+    
+    func testIntersectsReturnsHeadWhenOtherListSharesSameHead() {
+        
+        // Build a list by hand.
+        let commonHead = ListNode<Int>(key: 31)
+        let fiftyFive = ListNode<Int>(key: 55)
+        let twenty = ListNode<Int>(key: 20)
+        
+        fiftyFive.next = twenty
+        commonHead.next = fiftyFive
+        
+        // Use LinkedList API to make a list.
+        let list = LinkedList<Int>(head: commonHead, length: 1)
+        list.append(key: 44)
+        list.append(key: 71)
+        list.append(key: 189)
+        
+        XCTAssert(list.intersects(with: commonHead) === commonHead)
+    }
+    
+    func testIntersectsReturnsIntersectingNodeWhenListsIntersect() {
+        
+        // Build a list
+        let list = LinkedList<Int>()
+        list.append(key: 44)
+        list.append(key: 71)
+        list.append(key: 189)
+        let thirtyOne = list.append(key: 31)
+        let ninety = list.append(key: 90)
+        let eight = list.append(key: 8)
+        let fifteen = list.append(key: 15)
+        let fourty = list.append(key: 40)
+        
+        // Build a list by hand
+        let otherHead = ListNode<Int>(key: 31)
+        otherHead.next = thirtyOne
+        
+        // Ensure they intersect
+        XCTAssert(list.intersects(with: otherHead) === thirtyOne)
+        
+        // Ensure chain pointers are also the same
+        XCTAssert(thirtyOne.next === ninety)
+        XCTAssert(ninety.next === eight)
+        XCTAssert(eight.next === fifteen)
+        XCTAssert(fifteen.next === fourty)
+    }
 }

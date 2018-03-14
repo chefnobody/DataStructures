@@ -8,9 +8,12 @@
 
 import Foundation
 
-fileprivate class Node<T> {
-    var key:T?
-    var next:Node?
+public class QueueNode<T> {
+    var key:T
+    var next:QueueNode?
+    init(key: T) {
+        self.key = key
+    }
 }
 
 // Generic queue structure for ordering things. Rules: First in, first out.
@@ -29,11 +32,11 @@ public class Queue<T> {
     
     // MARK: - Stored Properties
     
-    private var top: Node<T>?
+    private var top: QueueNode<T>?
     private var counter: Int
     
     public init() {
-        top = Node<T>()
+        top = nil
         counter = 0
     }
     
@@ -44,7 +47,7 @@ public class Queue<T> {
         
         // Empty line, case.
         guard !isEmpty() else {
-            top?.key = key
+            top = QueueNode<T>(key: key)
             return
         }
         
@@ -55,8 +58,7 @@ public class Queue<T> {
             current = current?.next
         }
         
-        let newNode = Node<T>()
-        newNode.key = key
+        let newNode = QueueNode<T>(key: key)
         
         // Append new child
         current?.next = newNode
@@ -77,12 +79,11 @@ public class Queue<T> {
         let key: T? = peek()
         
         // Move top to the next item, otherwise
-        // create a new blank node for the top because
-        // we emptied the line.
+        // nil the top because we emptied the line.
         if let nextItem = top?.next {
             top = nextItem
         } else {
-            top = Node<T>()
+            top = nil
         }
         
         return key
@@ -102,8 +103,8 @@ public class Queue<T> {
             return "Queue is empty!"
         }
         
-        var keys = Array<T>()
-        var current: Node<T>? = top
+        var keys = [T]()
+        var current: QueueNode<T>? = top
         
         while current != nil {
             if let key = current?.key {
