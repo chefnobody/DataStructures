@@ -80,7 +80,7 @@
 		B07750202046EBA2004182F1 /* 2.3-DeleteMiddleNode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.3-DeleteMiddleNode.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750212046EBA2004182F1 /* 2.2-ReturnKthToLast.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.2-ReturnKthToLast.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750232046EBB5004182F1 /* 3.1-ThreeInOne.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.1-ThreeInOne.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		B07750242046EBB5004182F1 /* 3.2-StackMin.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.2-StackMin.playground"; sourceTree = "<group>"; };
+		B07750242046EBB5004182F1 /* 3.2-StackMin.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.2-StackMin.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750252046EBB5004182F1 /* 3.3-StackOfPlates.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.3-StackOfPlates.playground"; sourceTree = "<group>"; };
 		B07750262046EBB5004182F1 /* 3.4-QueueViaStacks.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.4-QueueViaStacks.playground"; sourceTree = "<group>"; };
 		B07750272046EBB5004182F1 /* 3.5-SortStack.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.5-SortStack.playground"; sourceTree = "<group>"; };
