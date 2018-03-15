@@ -10,7 +10,7 @@ import Foundation
 
 public class StackNode<T: Hashable> {
     var key: T
-    var next: StackNode?
+    var next: StackNode<T>?
     init(key: T) {
         self.key = key
     }
