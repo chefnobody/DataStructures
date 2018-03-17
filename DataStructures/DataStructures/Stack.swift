@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class StackNode<T: Hashable> {
+public class StackNode<T: Comparable> {
     var key: T
     var next: StackNode<T>?
     init(key: T) {
@@ -24,7 +24,7 @@ public class StackNode<T: Hashable> {
 // Adding items 0(1) constant time. Why? You're always pushing onto the the head.
 // Removing items 0(1) constant time. Why? You're always popping off the head.
 //
-public class Stack<T: Hashable> {
+public class Stack<T: Comparable> {
 
     // MARK: - Public Properties
     
@@ -32,14 +32,22 @@ public class Stack<T: Hashable> {
         return counter
     }
 
+    public var min: T? {
+        return localMin
+    }
+    
     // MARK: - Stored Properties
     
     private var top: StackNode<T>?
+    
     private var counter: Int
+    
+    private var localMin: T?
     
     public init() {
         top = nil
         counter = 0
+        localMin = nil
     }
     
     // Adding items happens in O(1) "constant" time because we're
@@ -51,7 +59,13 @@ public class Stack<T: Hashable> {
         // Empty list, case
         guard !isEmpty() else {
             top = StackNode<T>(key: key)
+            localMin = key
             return
+        }
+        
+        // Swap the localMin value?
+        if localMin != nil && key < localMin! {
+            localMin = key
         }
         
         let newNode = StackNode<T>(key: key)
@@ -76,6 +90,11 @@ public class Stack<T: Hashable> {
         } else {
             // Otherwise, nil out the head's key.
             top = nil
+        }
+        
+        // Find a new min, if we just popped it off the list.
+        if localMin != nil && key <= localMin! {
+            localMin = findMin()
         }
         
         return key
@@ -105,5 +124,30 @@ public class Stack<T: Hashable> {
         return keys
             .map({ String(describing: $0) })
             .joined(separator: ",")
+    }
+
+    // This is called if we pop our current minimum value
+    // off the stack and now need to find a new minimum value.
+    private func findMin() -> T? {
+        guard !isEmpty() else {
+            return nil
+        }
+        
+        var current: StackNode<T>? = top
+        var currentMin = current?.key
+        
+        while current != nil {
+            // Explicitly unwrapping these two values
+            // should be safe. Current is never nil
+            // inside the while loop, and currentMin
+            // will never be nil, because the head/top
+            // is never nil at this point.
+            if current!.key < currentMin! {
+                currentMin = current?.key
+            }
+            current = current?.next
+        }
+        
+        return currentMin
     }
 }

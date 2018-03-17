@@ -62,12 +62,12 @@ class StackTests: XCTestCase {
     
     // pop
     
-    func testPopReturnsNilWhenStackHasNoItems() {
+    func testPopReturnsNilWhenStackIsEmpty() {
         let stack = Stack<Int>()
         XCTAssert(stack.pop() == nil)
     }
     
-    func testPopDoesNotDecrementCountWhenStackHasNoItems() {
+    func testPopDoesNotDecrementCountWhenStackIsEmpty() {
         let stack = Stack<Int>()
         XCTAssert(stack.count == 0)
         
@@ -122,7 +122,7 @@ class StackTests: XCTestCase {
     
     // peek
     
-    func testPeekReturnsNilWhenStackHasNoItems() {
+    func testPeekReturnsNilWhenStackIsEmpty() {
         let stack = Stack<Int>()
         XCTAssert(stack.peek() == nil)
     }
@@ -154,7 +154,7 @@ class StackTests: XCTestCase {
     
     // isEmpty
     
-    func testIsEmptyIsTrueWhenStackHasNoItems() {
+    func testIsEmptyIsTrueWhenStackIsEmpty() {
         let stack = Stack<Int>()
         XCTAssert(stack.isEmpty() == true)
     }
@@ -192,7 +192,7 @@ class StackTests: XCTestCase {
     
     // printKeys
     
-    func testPrintKeysReturnsNoEmptyMessageWhenStackHasNoItems() {
+    func testPrintKeysReturnsNoEmptyMessageWhenStackIsEmpty() {
         let stack = Stack<Int>()
         XCTAssert(stack.printKeys() == "Stack is empty!")
     }
@@ -212,4 +212,77 @@ class StackTests: XCTestCase {
         XCTAssert(stack.printKeys() == "91,71,18,8")
     }
     
+    // MARK: - min
+    
+    func testMinReturnsNilWhenStackIsEmpty() {
+        let stack = Stack<Int>()
+        XCTAssertNil(stack.min)
+    }
+    
+    func testMinReturnsHeadWhenStackHasOneItem() {
+        let stack = Stack<Int>()
+        stack.push(key: 18)
+        XCTAssert(stack.min == 18)
+    }
+    
+    func testMinReturnsMinWhenStackHasManyItems() {
+        let stack = Stack<Int>()
+        stack.push(key: 8)
+        stack.push(key: 18)
+        stack.push(key: 71)
+        stack.push(key: 91)
+        stack.push(key: 0)
+        stack.push(key: 8)
+        stack.push(key: 31)
+        stack.push(key: 20)
+        stack.push(key: 55)
+        XCTAssert(stack.min == 0)
+    }
+    
+    func testMinReturnsMinWhenMinIsAtTheTop() {
+        let stack = Stack<Int>()
+        stack.push(key: 8)
+        stack.push(key: 18)
+        stack.push(key: 71)
+        stack.push(key: 91)
+        stack.push(key: 7)
+        stack.push(key: 8)
+        stack.push(key: 31)
+        stack.push(key: 20)
+        stack.push(key: 1)
+        XCTAssert(stack.min == 1)
+    }
+    
+    func testMinReturnsMinWhenMinIsAtTheBottom() {
+        let stack = Stack<Int>()
+        stack.push(key: 1)
+        stack.push(key: 18)
+        stack.push(key: 71)
+        stack.push(key: 91)
+        stack.push(key: 7)
+        stack.push(key: 8)
+        stack.push(key: 31)
+        stack.push(key: 20)
+        XCTAssert(stack.min == 1)
+    }
+    
+    func testMinReturnsCorrectMinValueAfterMinValueIsPopped() {
+        let stack = Stack<Int>()
+        stack.push(key: 4)
+        stack.push(key: 18)
+        stack.push(key: 71)
+        stack.push(key: 91)
+        stack.push(key: 7)
+        stack.push(key: 8)
+        stack.push(key: 31)
+        stack.push(key: 2)
+        stack.push(key: 1)
+        XCTAssert(stack.min == 1)
+        
+        stack.pop() // pops 1 off the stack
+        XCTAssert(stack.min == 2)
+        
+        stack.pop() // pops 2 off the stack
+        XCTAssert(stack.min == 4)
+    }
 }

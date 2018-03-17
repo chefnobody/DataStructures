@@ -146,7 +146,7 @@ class QueueTests: XCTestCase {
     
     // isEmpty
     
-    func testIsEmptyIsTrueWhenQueueHasNoItems() {
+    func testIsEmptyIsTrueWhenQueueIsEmpty() {
         let q = Queue<Int>()
         XCTAssert(q.isEmpty() == true)
     }
@@ -167,7 +167,7 @@ class QueueTests: XCTestCase {
     
     // printKeys
     
-    func testPrintKeysReturnsMessageWhenQueueHasNoItems() {
+    func testPrintKeysReturnsMessageWhenQueueIsEmpty() {
         let q = Queue<Int>()
         XCTAssert(q.printKeys() == "Queue is empty!")
     }
