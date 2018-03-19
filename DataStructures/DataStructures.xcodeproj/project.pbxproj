@@ -81,22 +81,22 @@
 		B07750212046EBA2004182F1 /* 2.2-ReturnKthToLast.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "2.2-ReturnKthToLast.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750232046EBB5004182F1 /* 3.1-ThreeInOne.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.1-ThreeInOne.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750242046EBB5004182F1 /* 3.2-StackMin.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.2-StackMin.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		B07750252046EBB5004182F1 /* 3.3-StackOfPlates.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.3-StackOfPlates.playground"; sourceTree = "<group>"; };
-		B07750262046EBB5004182F1 /* 3.4-QueueViaStacks.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.4-QueueViaStacks.playground"; sourceTree = "<group>"; };
-		B07750272046EBB5004182F1 /* 3.5-SortStack.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.5-SortStack.playground"; sourceTree = "<group>"; };
-		B07750282046EBB5004182F1 /* 3.6-AnimalShelter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.6-AnimalShelter.playground"; sourceTree = "<group>"; };
-		B077502A2046EBB5004182F1 /* 4.1-RouteBetweenNodes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.1-RouteBetweenNodes.playground"; sourceTree = "<group>"; };
-		B077502B2046EBB5004182F1 /* 4.10-CheckSubtree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.10-CheckSubtree.playground"; sourceTree = "<group>"; };
-		B077502C2046EBB5004182F1 /* 4.11-RandomNode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.11-RandomNode.playground"; sourceTree = "<group>"; };
-		B077502D2046EBB5004182F1 /* 4.12-PathsWithSum.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.12-PathsWithSum.playground"; sourceTree = "<group>"; };
-		B077502E2046EBB5004182F1 /* 4.2-MinimalTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.2-MinimalTree.playground"; sourceTree = "<group>"; };
-		B077502F2046EBB5004182F1 /* 4.3-ListOfDepths.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.3-ListOfDepths.playground"; sourceTree = "<group>"; };
-		B07750302046EBB5004182F1 /* 4.4-CheckBalanced.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.4-CheckBalanced.playground"; sourceTree = "<group>"; };
-		B07750312046EBB5004182F1 /* 4.5-ValidateBST.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.5-ValidateBST.playground"; sourceTree = "<group>"; };
-		B07750322046EBB5004182F1 /* 4.6-Successor.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.6-Successor.playground"; sourceTree = "<group>"; };
-		B07750332046EBB5004182F1 /* 4.7-BuildOrder.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.7-BuildOrder.playground"; sourceTree = "<group>"; };
-		B07750342046EBB5004182F1 /* 4.8-FirstCommonAncestor.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.8-FirstCommonAncestor.playground"; sourceTree = "<group>"; };
-		B07750352046EBB5004182F1 /* 4.9-BSTSequences.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.9-BSTSequences.playground"; sourceTree = "<group>"; };
+		B07750252046EBB5004182F1 /* 3.3-StackOfPlates.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.3-StackOfPlates.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750262046EBB5004182F1 /* 3.4-QueueViaStacks.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.4-QueueViaStacks.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750272046EBB5004182F1 /* 3.5-SortStack.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.5-SortStack.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750282046EBB5004182F1 /* 3.6-AnimalShelter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "3.6-AnimalShelter.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B077502A2046EBB5004182F1 /* 4.1-RouteBetweenNodes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.1-RouteBetweenNodes.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B077502B2046EBB5004182F1 /* 4.10-CheckSubtree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.10-CheckSubtree.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B077502C2046EBB5004182F1 /* 4.11-RandomNode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.11-RandomNode.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B077502D2046EBB5004182F1 /* 4.12-PathsWithSum.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.12-PathsWithSum.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B077502E2046EBB5004182F1 /* 4.2-MinimalTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.2-MinimalTree.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B077502F2046EBB5004182F1 /* 4.3-ListOfDepths.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.3-ListOfDepths.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750302046EBB5004182F1 /* 4.4-CheckBalanced.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.4-CheckBalanced.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750312046EBB5004182F1 /* 4.5-ValidateBST.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.5-ValidateBST.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750322046EBB5004182F1 /* 4.6-Successor.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.6-Successor.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750332046EBB5004182F1 /* 4.7-BuildOrder.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.7-BuildOrder.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750342046EBB5004182F1 /* 4.8-FirstCommonAncestor.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.8-FirstCommonAncestor.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B07750352046EBB5004182F1 /* 4.9-BSTSequences.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.9-BSTSequences.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B07750372047040C004182F1 /* 7.1-DeckOfCards.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.1-DeckOfCards.playground"; sourceTree = "<group>"; };
 		B07750382047040C004182F1 /* 7.10-Minesweeper.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.10-Minesweeper.playground"; sourceTree = "<group>"; };
 		B07750392047040C004182F1 /* 7.11-FileSystem.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "7.11-FileSystem.playground"; sourceTree = "<group>"; };
@@ -164,6 +164,7 @@
 		B077508020476352004182F1 /* MinHeap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinHeap.swift; sourceTree = "<group>"; };
 		B077508220484789004182F1 /* GraphList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphList.swift; sourceTree = "<group>"; };
 		B077508520484AA5004182F1 /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
+		B0EEEDF520603C27001252A1 /* 4.00-PrettyPrintBinaryTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.00-PrettyPrintBinaryTree.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +309,7 @@
 		B07750292046EBB5004182F1 /* TreesGraphs */ = {
 			isa = PBXGroup;
 			children = (
+				B0EEEDF520603C27001252A1 /* 4.00-PrettyPrintBinaryTree.playground */,
 				B077502A2046EBB5004182F1 /* 4.1-RouteBetweenNodes.playground */,
 				B077502B2046EBB5004182F1 /* 4.10-CheckSubtree.playground */,
 				B077502C2046EBB5004182F1 /* 4.11-RandomNode.playground */,

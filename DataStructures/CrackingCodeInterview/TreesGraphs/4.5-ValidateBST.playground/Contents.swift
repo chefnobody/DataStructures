@@ -2,4 +2,7 @@
 
 import UIKit
 
-var str = "Hello, playground"
+/*
+ Validate BST
+ Implement a function to check if a binary tree is a Binary Search Tree
+ */

@@ -2,4 +2,7 @@
 
 import UIKit
 
-var str = "Hello, playground"
+/*
+ List of Depths
+ Given a binary tree, design an algorithm which creats a linked list of all nodes at each depth (e.g. if you have a tree with depth D, you'll have D-linked lists)
+ */
