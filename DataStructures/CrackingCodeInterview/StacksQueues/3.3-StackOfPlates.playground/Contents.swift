@@ -1,6 +1,7 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
+import Foundation
+import DataStructures
 
 /*
  Stack of Plates
@@ -14,6 +15,23 @@ import UIKit
  - Need some sort of interal way of knowing which stack we're working on right now.
  */
 
-class SetOfStacks {
-    
-}
+
+let stacks = SetOfStacks<Int>(fixedSize: 2)
+stacks.push(key: 31)
+stacks.push(key: 5)     // stack is full.
+stacks.push(key: 91)
+stacks.push(key: 78)    // stack is full.
+stacks.push(key: 7)
+stacks.push(key: 100)   // stack is full.
+stacks.push(key: 62)
+stacks.count
+
+stacks.pop()        // 62   should remove the empty stack
+stacks.peek()
+//stacks.pop()        // 100
+//stacks.pop()        // 7
+//stacks.peek()       // 78
+
+//
+// pop should return 2
+

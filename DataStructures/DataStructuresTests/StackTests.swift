@@ -21,7 +21,7 @@ class StackTests: XCTestCase {
         super.tearDown()
     }
     
-    // Initialized state
+    // MARK: - Initialized state
     
     func testNewStackCountIsZero() {
         let stack = Stack<Int>()
@@ -33,7 +33,7 @@ class StackTests: XCTestCase {
         XCTAssert(stack.isEmpty() == true)
     }
     
-    // push
+    // MARK: - push
     
     func testPushIncrementsCountWhenStackHasOneItem() {
         let stack = Stack<Int>()
@@ -60,7 +60,7 @@ class StackTests: XCTestCase {
         XCTAssert(stack.count == 5)
     }
     
-    // pop
+    // MARK: - pop
     
     func testPopReturnsNilWhenStackIsEmpty() {
         let stack = Stack<Int>()
@@ -120,7 +120,7 @@ class StackTests: XCTestCase {
         XCTAssert(stack.pop() == nil)
     }
     
-    // peek
+    // MARK: - peek
     
     func testPeekReturnsNilWhenStackIsEmpty() {
         let stack = Stack<Int>()
@@ -152,7 +152,7 @@ class StackTests: XCTestCase {
         XCTAssert(stack.count == 3)
     }
     
-    // isEmpty
+    // MARK: - isEmpty
     
     func testIsEmptyIsTrueWhenStackIsEmpty() {
         let stack = Stack<Int>()
@@ -190,7 +190,7 @@ class StackTests: XCTestCase {
         XCTAssert(stack.isEmpty() == true)
     }
     
-    // printKeys
+    // MARK: - printKeys
     
     func testPrintKeysReturnsNoEmptyMessageWhenStackIsEmpty() {
         let stack = Stack<Int>()
@@ -284,5 +284,17 @@ class StackTests: XCTestCase {
         
         stack.pop() // pops 2 off the stack
         XCTAssert(stack.min == 4)
+    }
+
+    // MARK: - SetOfStacks
+    
+    func testSOSInitializesSuccessfully() {
+        let sos = SetOfStacks<Int>(fixedSize: 4)
+        XCTAssertNotNil(sos)
+    }
+
+    func testSOSPopReturnsNilWhenSetIsEmpty() {
+        let sos = SetOfStacks<Int>(fixedSize: 4)
+        XCTAssertNil(sos.pop())
     }
 }

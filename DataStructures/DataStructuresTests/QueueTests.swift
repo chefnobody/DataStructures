@@ -21,7 +21,7 @@ class QueueTests: XCTestCase {
         super.tearDown()
     }
     
-    // Initialized State
+    // MARK: - Initialized State
     
     func testNewQueueCountIsZero() {
         let q = Queue<Int>()
@@ -33,7 +33,7 @@ class QueueTests: XCTestCase {
         XCTAssert(q.isEmpty() == true)
     }
     
-    // enQueue
+    // MARK: - enQueue
     
     func testEnQueueIncrementsCountWhenQueueHasOneItem() {
         let q = Queue<Int>()
@@ -59,7 +59,7 @@ class QueueTests: XCTestCase {
         XCTAssert(q.count == 3)
     }
     
-    // deQueue
+    // MARK: - deQueue
     
     func testDeQueueReturnsNilWhenQueueIsEmpty() {
         let q = Queue<Int>()
@@ -113,7 +113,7 @@ class QueueTests: XCTestCase {
         XCTAssert(q.deQueue() == nil)
     }
     
-    // peek
+    // MARK: - peek
     
     func testPeekReturnsNilWhenQueueIsEmpty() {
         let q = Queue<Int>()
@@ -144,7 +144,7 @@ class QueueTests: XCTestCase {
         XCTAssert(q.count == 3)
     }
     
-    // isEmpty
+    // MARK: - isEmpty
     
     func testIsEmptyIsTrueWhenQueueIsEmpty() {
         let q = Queue<Int>()
@@ -165,7 +165,7 @@ class QueueTests: XCTestCase {
         XCTAssert(q.isEmpty() == false)
     }
     
-    // printKeys
+    // MARK: - printKeys
     
     func testPrintKeysReturnsMessageWhenQueueIsEmpty() {
         let q = Queue<Int>()
@@ -184,5 +184,51 @@ class QueueTests: XCTestCase {
         q.enQueue(key: 55)
         q.enQueue(key: 71)
         XCTAssert(q.printKeys() == "31,55,71")
+    }
+}
+
+class MyQueueTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+    
+    func testMyQueueEnqueueAddsItem() {
+        let q = MyQueue<Int>()
+        q.enqueue(key: 31)
+        XCTAssert(q.count == 1)
+    }
+    
+    func testMyQueueEnqueueAddsItems() {
+        let q = MyQueue<Int>()
+        q.enqueue(key: 31)
+        q.enqueue(key: 55)
+        q.enqueue(key: 79)
+        q.enqueue(key: 80)
+        q.enqueue(key: 2)
+        q.enqueue(key: 6)
+        XCTAssert(q.count == 6)
+    }
+    
+    func testMyQueueDequeuesCorrectItems() {
+        let q = MyQueue<Int>()
+        q.enqueue(key: 31)
+        q.enqueue(key: 55)
+        q.enqueue(key: 79)
+        q.enqueue(key: 80)
+        q.enqueue(key: 2)
+        q.enqueue(key: 6)
+        XCTAssert(q.dequeue() == 31)
+        XCTAssert(q.dequeue() == 55)
+        XCTAssert(q.dequeue() == 79)
+        XCTAssert(q.dequeue() == 80)
+        XCTAssert(q.dequeue() == 2)
+        XCTAssert(q.dequeue() == 6)
+        XCTAssert(q.count == 0)
     }
 }

@@ -151,3 +151,107 @@ public class Stack<T: Comparable> {
         return currentMin
     }
 }
+
+// From 3.3 SetOfStacks
+class SetOfStacks<T: Comparable> {
+    
+    // MARK: - Public properties
+    
+    public var count: Int {
+        get {
+            return counter
+        }
+    }
+    
+    // MARK: - Stored properties
+    
+    // Keep small for testing.
+    // Watch out for odd number fixed sizes.
+    private let fixedSize: Int
+    
+    private var counter: Int
+    
+    // Stacks have a length of fixedSize.
+    // Lets make the stacks hold integers for now.
+    // As we
+    private var stacks: [Stack<T>]
+    
+    init(fixedSize: Int) {
+        
+        // FYI: Fixed size should always be > 0
+        
+        self.fixedSize = fixedSize
+        self.counter = 0
+        
+        // Add one stack
+        self.stacks = [Stack<T>]()
+    }
+    
+    // Figure out which stack to push onto.
+    // Increment local counter
+    func push(key: T) {
+        
+        // Which stack are we pushing on to?
+        let stack = currentStack()
+        stack.push(key: key)
+        
+        // Increment total items
+        counter += 1
+    }
+    
+    // Determine which stack to pop from.
+    // Once that stack is empty, remove
+    // it from storage.
+    func pop() -> T? {
+        // Important to decrememnt count
+        // before determining current stack
+        counter -= 1
+        
+        let stack = currentStack()
+        let key = stack.pop()
+        
+        if stack.count == 0 {
+            // since stacks are appended
+            // this should be safe:
+            print("stack is empty. clean it up.")
+            stacks.removeLast()
+            print("total stacks", stacks.count)
+        }
+        
+        return key
+    }
+    
+    // Watch out you could peek at an empty
+    // stack that hasn't yet been cleaned.
+    func peek() -> T? {
+        let stack = currentStack()
+        return stack.peek()
+    }
+    
+    func popAt(index: Int) -> T? {
+        return nil
+    }
+    
+    // Takes the current count, the fixed size
+    // and figures out which stack to return.
+    // If no stack is found it allocates a new
+    // stack.
+    func currentStack() -> Stack<T> {
+        // derive an index in our stack array
+        // that corresponds to the current stack
+        let index = counter / fixedSize
+        
+        if (0..<stacks.count).contains(index) {
+            return stacks[index]
+        }
+        
+        return allocateStack()
+    }
+    
+    private func allocateStack() -> Stack<T> {
+        let stack = Stack<T>()
+        stacks.append(stack)
+        return stack
+    }
+}
+

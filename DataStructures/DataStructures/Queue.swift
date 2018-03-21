@@ -119,3 +119,52 @@ public class Queue<T> {
             .joined(separator: ",")
     }
 }
+
+
+/*
+ Frin 3.4 Queue Via Stacks
+ */
+class MyQueue<T: Comparable> {
+    
+    public var count: Int {
+        get {
+            return stack.count
+        }
+    }
+    
+    private var stack: Stack<T>
+    
+    init() {
+        self.stack = Stack<T>()
+    }
+    
+    func enqueue(key: T) {
+        stack.push(key: key)
+    }
+    
+    // Fairly expensive
+    // - 0(n) to reverse that takes 2n space.
+    // - Does this twice.
+    func dequeue() -> T? {
+        // reverse main stack
+        let tempStack = reverse(stack)
+        let popped = tempStack.pop()
+        
+        // reverse it back
+        stack = reverse(tempStack)
+        return popped
+    }
+    
+    // This is 0(n) time complexity
+    // and 0(2n) space complexity, but thats
+    // where the second stack comes in.
+    func reverse(_ stack: Stack<T>) -> Stack<T> {
+        let temp = Stack<T>()
+        while !stack.isEmpty() {
+            if let key = stack.pop() {
+                temp.push(key: key)
+            }
+        }
+        return temp
+    }
+}
