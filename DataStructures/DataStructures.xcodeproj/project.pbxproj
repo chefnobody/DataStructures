@@ -28,6 +28,9 @@
 		B077508120476352004182F1 /* MinHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077508020476352004182F1 /* MinHeap.swift */; };
 		B077508320484789004182F1 /* GraphList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077508220484789004182F1 /* GraphList.swift */; };
 		B077508620484AA5004182F1 /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077508520484AA5004182F1 /* GraphTests.swift */; };
+		B0EBE63420640619009FADAA /* AnimalShelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBE63320640619009FADAA /* AnimalShelter.swift */; };
+		B0EBE63520640619009FADAA /* AnimalShelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBE63320640619009FADAA /* AnimalShelter.swift */; };
+		B0EBE638206433BE009FADAA /* AnimalShelterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBE637206433BE009FADAA /* AnimalShelterTests.swift */; };
 		B0F594F52058114A007EB61B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0774FB92040FACE004182F1 /* Stack.swift */; };
 		B0F594F620581150007EB61B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0774FB72040FAC3004182F1 /* Queue.swift */; };
 /* End PBXBuildFile section */
@@ -164,6 +167,8 @@
 		B077508020476352004182F1 /* MinHeap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinHeap.swift; sourceTree = "<group>"; };
 		B077508220484789004182F1 /* GraphList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphList.swift; sourceTree = "<group>"; };
 		B077508520484AA5004182F1 /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
+		B0EBE63320640619009FADAA /* AnimalShelter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalShelter.swift; sourceTree = "<group>"; };
+		B0EBE637206433BE009FADAA /* AnimalShelterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalShelterTests.swift; sourceTree = "<group>"; };
 		B0EEEDF520603C27001252A1 /* 4.00-PrettyPrintBinaryTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "4.00-PrettyPrintBinaryTree.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
@@ -186,13 +191,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B04C0B3A2061F541001758F9 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		B0774F932040FA50004182F1 = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +214,7 @@
 		B0774F9F2040FA50004182F1 /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
-				B04C0B3A2061F541001758F9 /* New Group */,
+				B0EBE63220640609009FADAA /* CustomStructures */,
 				B077507D2047632F004182F1 /* Graphs */,
 				B0774FA02040FA50004182F1 /* DataStructures.h */,
 				B0774FA12040FA50004182F1 /* Info.plist */,
@@ -233,6 +231,7 @@
 		B0774FAA2040FA51004182F1 /* DataStructuresTests */ = {
 			isa = PBXGroup;
 			children = (
+				B0EBE63620640C75009FADAA /* CustomStructuresTests */,
 				B077508420484A8A004182F1 /* Graphs */,
 				B0774FAD2040FA51004182F1 /* Info.plist */,
 				B0774FAB2040FA51004182F1 /* DataStructuresTests.swift */,
@@ -458,6 +457,22 @@
 			path = Graphs;
 			sourceTree = "<group>";
 		};
+		B0EBE63220640609009FADAA /* CustomStructures */ = {
+			isa = PBXGroup;
+			children = (
+				B0EBE63320640619009FADAA /* AnimalShelter.swift */,
+			);
+			path = CustomStructures;
+			sourceTree = "<group>";
+		};
+		B0EBE63620640C75009FADAA /* CustomStructuresTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0EBE637206433BE009FADAA /* AnimalShelterTests.swift */,
+			);
+			path = CustomStructuresTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -570,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B077507F20476349004182F1 /* BinaryTree.swift in Sources */,
+				B0EBE63420640619009FADAA /* AnimalShelter.swift in Sources */,
 				B077500A2044EDFC004182F1 /* UnicodeModularHash.swift in Sources */,
 				B077508120476352004182F1 /* MinHeap.swift in Sources */,
 				B0774FBC2040FADA004182F1 /* Trie.swift in Sources */,
@@ -592,11 +608,13 @@
 				B0774FAC2040FA51004182F1 /* DataStructuresTests.swift in Sources */,
 				B0F594F52058114A007EB61B /* Stack.swift in Sources */,
 				B0775003204360CB004182F1 /* LinkedListTests.swift in Sources */,
+				B0EBE63520640619009FADAA /* AnimalShelter.swift in Sources */,
 				B0F594F620581150007EB61B /* Queue.swift in Sources */,
 				B0577BA32054BE7800994214 /* BinarySearchTreeTests.swift in Sources */,
 				B0774FC22040FAF6004182F1 /* QueueTests.swift in Sources */,
 				B077508620484AA5004182F1 /* GraphTests.swift in Sources */,
 				B07750072044E7FC004182F1 /* HashTableTests.swift in Sources */,
+				B0EBE638206433BE009FADAA /* AnimalShelterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
