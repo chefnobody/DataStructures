@@ -153,7 +153,7 @@ public class Stack<T: Comparable> {
 }
 
 // From 3.3 SetOfStacks
-class SetOfStacks<T: Comparable> {
+public class SetOfStacks<T: Comparable> {
     
     // MARK: - Public properties
     
@@ -252,6 +252,100 @@ class SetOfStacks<T: Comparable> {
         let stack = Stack<T>()
         stacks.append(stack)
         return stack
+    }
+}
+
+// From 3.5 Sort Stack
+// Let's bind this to Integer types for now
+// 
+public class SortedStack<T: Comparable> {
+
+    // MARK: - Stored Properties
+    private var isDirty: Bool
+    private var stack: Stack<T>
+    private var buffer: Stack<T>
+    
+    public init() {
+        isDirty = false
+        stack = Stack<T>()
+        buffer = Stack<T>()
+    }
+    
+    public func push(key: T) {
+        isDirty = true
+        stack.push(key: key)
+    }
+    
+    public func pop() -> T? {
+        if isDirty {
+            sort()
+        }
+        
+        return stack.pop()
+    }
+    
+    public func peek() -> T? {
+        if isDirty {
+            sort()
+        }
+
+        return stack.peek()
+    }
+    
+    public func isEmpty() -> Bool {
+        return stack.isEmpty()
+    }
+    
+    public func printKeys() -> String {
+        if isDirty {
+            sort()
+        }
+        
+        return stack.printKeys()
+    }
+    
+    // MARK: - Private functions
+    
+    private func sort() {
+        
+        guard !isEmpty() else {
+            isDirty = false
+            return
+        }
+        
+        // Stack will never be empty at this point.
+
+        /*
+         Pushes element s in sorted order into buffer
+         By popping (removing) everything larger than s
+         from the buffer, and pushing them onto the stack.
+         Once a value in the buffer has been found to be
+         smaller than the temp value we want to "insert"
+         we push that temp value onto the buffer. Then move all
+         the larger values that were pushed onto the stack
+         back to the buffer.
+         
+         */
+        while !stack.isEmpty() {
+            
+            let temp = stack.pop()!
+            
+            // Explicitly unwrapping the buffer should be safe
+            // because of the isEmpty call.
+            while !buffer.isEmpty() && buffer.peek()! > temp {
+                stack.push(key: buffer.pop()!)
+            }
+            
+            buffer.push(key: temp)
+        }
+        
+        // Finally, empty the buffer back into the main stack.
+        // We're fully sorted.
+        while !buffer.isEmpty() {
+            stack.push(key: buffer.pop()!)
+        }
+        
+        isDirty = false
     }
 }
 

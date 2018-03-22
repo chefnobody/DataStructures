@@ -297,4 +297,43 @@ class StackTests: XCTestCase {
         let sos = SetOfStacks<Int>(fixedSize: 4)
         XCTAssertNil(sos.pop())
     }
+    
+    // MARK: - Sorted Stack
+    
+    // Could write more tests here...
+    
+    // MARK: pop
+    
+    func testSortedStackPopReturnsSmallestItem() {
+        let ss = SortedStack<Int>()
+        ss.push(key: 2)
+        ss.push(key: 3)
+        ss.push(key: 4)
+        ss.push(key: 0)
+        ss.push(key: 7)
+        ss.push(key: 12)
+        ss.push(key: 1)
+        ss.push(key: 9)
+        ss.push(key: 8)
+        // Sorted stack should always have smallest on top.
+        XCTAssert(ss.pop() == 0)
+    }
+    
+    func testSortedStackPopReturnsItem() {
+        let ss = SortedStack<Int>()
+        ss.push(key: 2)
+        ss.push(key: 3)
+        ss.push(key: 4)
+        ss.push(key: 0)
+        ss.push(key: 7)
+        ss.push(key: 12)
+        ss.push(key: 1)
+        ss.push(key: 9)
+        ss.push(key: 8)
+        // Sorted stack should always be sorted ascending order
+        print(ss.printKeys())
+        XCTAssert(ss.printKeys() == "0,1,2,3,4,7,8,9,12")
+    }
 }
+
+
