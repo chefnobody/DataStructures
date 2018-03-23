@@ -27,12 +27,9 @@ public class BSTNode<T> {
 // - Always balanced
 
 public class BST<T: Comparable> {
-    private var root: BSTNode<T>?
-    
-    public init() {}
     
     // Finds the right place for this key to hang in the tree.
-    public func insert(root: BSTNode<T>?, key: T) -> BSTNode<T>? {
+    static public func insert(root: BSTNode<T>?, key: T) -> BSTNode<T>? {
     
         guard let root = root else {
             // Root is nil so, we hit an empty spot recursing to our spot.
@@ -54,7 +51,7 @@ public class BST<T: Comparable> {
         return root
     }
     
-    public func inOrderTraverse(node: BSTNode<T>?) {
+    static public func inOrderTraverse(node: BSTNode<T>?) {
         guard let node = node else { return }
         
         inOrderTraverse(node: node.left)
@@ -62,7 +59,7 @@ public class BST<T: Comparable> {
         inOrderTraverse(node: node.right)
     }
     
-    public func preOrderTraverse(node: BSTNode<T>?) {
+    static public func preOrderTraverse(node: BSTNode<T>?) {
         guard let node = node else { return }
 
         print(node.key)
@@ -70,7 +67,7 @@ public class BST<T: Comparable> {
         preOrderTraverse(node: node.right)
     }
     
-    public func postOrderTraverse(node: BSTNode<T>?) {
+    static public func postOrderTraverse(node: BSTNode<T>?) {
         guard let node = node else { return }
         
         postOrderTraverse(node: node.left)
@@ -83,7 +80,7 @@ public class BST<T: Comparable> {
     // https://en.wikipedia.org/wiki/Binary_heap#Heap_implementation
     // - Array stores tree in breadth first order. [Parent, Left Child, Right Child, ...],
     // - How would you find the place in the array for a given level and then which is the left and which is the right node at that level?
-    public func prettyPrint() -> String {
+    static public func prettyPrint() -> String {
         return "Pizza!"
     }
 }

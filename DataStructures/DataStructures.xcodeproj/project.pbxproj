@@ -24,10 +24,11 @@
 		B07750072044E7FC004182F1 /* HashTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07750062044E7FC004182F1 /* HashTableTests.swift */; };
 		B077500A2044EDFC004182F1 /* UnicodeModularHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07750092044EDFC004182F1 /* UnicodeModularHash.swift */; };
 		B077500B2044EF27004182F1 /* UnicodeModularHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07750092044EDFC004182F1 /* UnicodeModularHash.swift */; };
-		B077507F20476349004182F1 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077507E20476349004182F1 /* BinaryTree.swift */; };
+		B077507F20476349004182F1 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077507E20476349004182F1 /* BinarySearchTree.swift */; };
 		B077508120476352004182F1 /* MinHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077508020476352004182F1 /* MinHeap.swift */; };
 		B077508320484789004182F1 /* GraphList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077508220484789004182F1 /* GraphList.swift */; };
 		B077508620484AA5004182F1 /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077508520484AA5004182F1 /* GraphTests.swift */; };
+		B0C4A8FC206540D900F2B904 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077507E20476349004182F1 /* BinarySearchTree.swift */; };
 		B0EBE63420640619009FADAA /* AnimalShelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBE63320640619009FADAA /* AnimalShelter.swift */; };
 		B0EBE63520640619009FADAA /* AnimalShelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBE63320640619009FADAA /* AnimalShelter.swift */; };
 		B0EBE638206433BE009FADAA /* AnimalShelterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBE637206433BE009FADAA /* AnimalShelterTests.swift */; };
@@ -163,7 +164,7 @@
 		B07750782047040D004182F1 /* 10.7-MissingInt.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.7-MissingInt.playground"; sourceTree = "<group>"; };
 		B07750792047040D004182F1 /* 10.8-FindDuplicates.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.8-FindDuplicates.playground"; sourceTree = "<group>"; };
 		B077507A2047040D004182F1 /* 10.9-SortedMatrixSearch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.9-SortedMatrixSearch.playground"; sourceTree = "<group>"; };
-		B077507E20476349004182F1 /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		B077507E20476349004182F1 /* BinarySearchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
 		B077508020476352004182F1 /* MinHeap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinHeap.swift; sourceTree = "<group>"; };
 		B077508220484789004182F1 /* GraphList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphList.swift; sourceTree = "<group>"; };
 		B077508520484AA5004182F1 /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
@@ -441,7 +442,7 @@
 		B077507D2047632F004182F1 /* Graphs */ = {
 			isa = PBXGroup;
 			children = (
-				B077507E20476349004182F1 /* BinaryTree.swift */,
+				B077507E20476349004182F1 /* BinarySearchTree.swift */,
 				B077508020476352004182F1 /* MinHeap.swift */,
 				B077508220484789004182F1 /* GraphList.swift */,
 			);
@@ -584,7 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B077507F20476349004182F1 /* BinaryTree.swift in Sources */,
+				B077507F20476349004182F1 /* BinarySearchTree.swift in Sources */,
 				B0EBE63420640619009FADAA /* AnimalShelter.swift in Sources */,
 				B077500A2044EDFC004182F1 /* UnicodeModularHash.swift in Sources */,
 				B077508120476352004182F1 /* MinHeap.swift in Sources */,
@@ -615,6 +616,7 @@
 				B077508620484AA5004182F1 /* GraphTests.swift in Sources */,
 				B07750072044E7FC004182F1 /* HashTableTests.swift in Sources */,
 				B0EBE638206433BE009FADAA /* AnimalShelterTests.swift in Sources */,
+				B0C4A8FC206540D900F2B904 /* BinarySearchTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
