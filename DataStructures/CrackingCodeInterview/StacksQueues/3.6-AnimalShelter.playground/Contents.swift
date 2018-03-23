@@ -4,31 +4,31 @@ import Foundation
 import DataStructures
 
 let animals = [
-    ShelterAnimal(type: .cat, name: "Oskar"),
-    ShelterAnimal(type: .cat, name: "Cookie"),
-    ShelterAnimal(type: .cat, name: "Sprinkles"),
-    ShelterAnimal(type: .dog, name: "Red"),
-    ShelterAnimal(type: .dog, name: "Shep"),
-    ShelterAnimal(type: .dog, name: "Lassie"),
-    ShelterAnimal(type: .cat, name: "Dave"),
-    ShelterAnimal(type: .cat, name: "Scratchy"),
-    ShelterAnimal(type: .cat, name: "Biscuit"),
-    ShelterAnimal(type: .cat, name: "Freddy"),
-    ShelterAnimal(type: .dog, name: "Tootles"),
-    ShelterAnimal(type: .dog, name: "Virginia"),
-    ShelterAnimal(type: .dog, name: "Bourbon"),
-    ShelterAnimal(type: .dog, name: "Barkley"),
-    ShelterAnimal(type: .dog, name: "Rufus"),
-    ShelterAnimal(type: .cat, name: "Bitsy"),
-    ShelterAnimal(type: .dog, name: "Whiskey"),
-    ShelterAnimal(type: .dog, name: "Holly"),
-    ShelterAnimal(type: .cat, name: "Polly"),
-    ShelterAnimal(type: .dog, name: "Barney"),
-    ShelterAnimal(type: .dog, name: "Frankie"),
-    ShelterAnimal(type: .dog, name: "Sparkles"),
-    ShelterAnimal(type: .dog, name: "Captain Bojangles"),
-    ShelterAnimal(type: .cat, name: "Meowser"),
-    ShelterAnimal(type: .dog, name: "Billy"),
+    Animal(type: .cat, name: "Oskar"),
+    Animal(type: .cat, name: "Cookie"),
+    Animal(type: .cat, name: "Sprinkles"),
+    Animal(type: .dog, name: "Red"),
+    Animal(type: .dog, name: "Shep"),
+    Animal(type: .dog, name: "Lassie"),
+    Animal(type: .cat, name: "Dave"),
+    Animal(type: .cat, name: "Scratchy"),
+    Animal(type: .cat, name: "Biscuit"),
+    Animal(type: .cat, name: "Freddy"),
+    Animal(type: .dog, name: "Tootles"),
+    Animal(type: .dog, name: "Virginia"),
+    Animal(type: .dog, name: "Bourbon"),
+    Animal(type: .dog, name: "Barkley"),
+    Animal(type: .dog, name: "Rufus"),
+    Animal(type: .cat, name: "Bitsy"),
+    Animal(type: .dog, name: "Whiskey"),
+    Animal(type: .dog, name: "Holly"),
+    Animal(type: .cat, name: "Polly"),
+    Animal(type: .dog, name: "Barney"),
+    Animal(type: .dog, name: "Frankie"),
+    Animal(type: .dog, name: "Sparkles"),
+    Animal(type: .dog, name: "Captain Bojangles"),
+    Animal(type: .cat, name: "Meowser"),
+    Animal(type: .dog, name: "Billy"),
 ]
 
 animals.filter { $0.type == .dog }.count
@@ -36,17 +36,16 @@ animals.filter { $0.type == .cat }.count
 
 let shelter = Shelter()
 
-for var a in animals {
-    a.logicalAge = 31
+for a in animals {
     shelter.enQueue(animal: a)
 }
 
 let sorted = animals
     .filter { $0.type == .dog }
-    .sorted { $0.logicalAge < $1.logicalAge }
-//print(sorted)
 
-var oskar = ShelterAnimal(type: .cat, name: "Oskar")
-oskar.logicalAge = 31
-print(oskar)
+shelter.dequeueAny()?.name // oksar (cat)
+shelter.dequeueAny()?.name // cookie (cat)
+shelter.dequeueDog()?.name // red (dog)
+shelter.dequeueAny()?.name // sprinkles (cat)
+
 

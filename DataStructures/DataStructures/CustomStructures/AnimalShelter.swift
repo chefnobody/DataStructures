@@ -32,27 +32,38 @@ import Foundation
  
  */
 
-public struct ShelterAnimal {
-    
-    public enum Species {
-        case dog
-        case cat
+// This seems like a solid case for inheritance
+// Where Swift's value semantics don't let me
+// set the value on an Animal object inside a loop.
+public enum Species {
+    case dog
+    case cat
+}
+
+public struct Animal {
+    public var type: Species
+    public var name: String
+    public init(type: Species, name: String) {
+        self.type = type
+        self.name = name
     }
+}
+
+public struct ShelterAnimal {
     
     // MARK: - Public properties
     
     // A logical time stamp for the animal when it goes into
     // the shelter.
-    public var logicalAge: Int = 0
     public let type: Species
     public let name: String
+    public var age: Int = 0
     
-    public init(type: Species, name: String) {
+    public init(type: Species, name: String, age: Int) {
         self.type = type
         self.name = name
+        self.age = age
     }
-    
-    
 }
 
 public class Shelter {
@@ -75,23 +86,26 @@ public class Shelter {
         dogs = Queue<ShelterAnimal>()
     }
     
-    public func enQueue(animal: ShelterAnimal) {
+    // Translates Animal to ShelteredAnimal (and gives it a logical age)
+    public func enQueue(animal: Animal) {
         
         // Tag the animal with the next logical "age"
         logicalAge += 1
-        animal.logicalAge = logicalAge
+        
+        // Subclass might help w/ this. Swift Protocols, too?
+        let shelteredAnimal = ShelterAnimal(type: animal.type, name: animal.name, age: logicalAge)
         
         // Depending on type, enqueue the animal
         switch animal.type {
         case .cat:
-            cats.enQueue(key: animal)
+            cats.enQueue(key: shelteredAnimal)
             break
         case .dog:
-            dogs.enQueue(key: animal)
+            dogs.enQueue(key: shelteredAnimal)
             break
         }
         
-        print("animals logical age: ", animal.logicalAge)
+        print("animals logical age: ", shelteredAnimal.age)
     }
     
     @discardableResult public func dequeueAny() -> ShelterAnimal? {
@@ -105,7 +119,7 @@ public class Shelter {
         
         // Logical ages start with small numbers, the smaller the number
         // the older the animal.
-        if cats.peek()!.logicalAge < dogs.peek()!.logicalAge {
+        if cats.peek()!.age < dogs.peek()!.age {
             // this means we have older cats
             return cats.deQueue()
         } else {
