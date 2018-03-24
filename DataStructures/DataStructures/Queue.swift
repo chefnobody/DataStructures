@@ -9,11 +9,13 @@
 import Foundation
 
 public class QueueNode<T> {
+    
     var key:T
     var next:QueueNode?
     init(key: T) {
         self.key = key
     }
+    
 }
 
 // Generic queue structure for ordering things. Rules: First in, first out.
@@ -115,7 +117,7 @@ public class Queue<T> {
         }
         
         return keys
-            .map({ String(describing: $0) })
+            .map { String(describing: $0) }
             .joined(separator: ",")
     }
 }
