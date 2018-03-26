@@ -9,7 +9,7 @@
 import XCTest
 import DataStructures
 
-class GraphTests: XCTestCase {
+class GraphListTests: XCTestCase {
 
     let graphList = GraphList<String>()
     

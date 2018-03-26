@@ -20,7 +20,7 @@ public class BSTNode<T>: CustomStringConvertible {
     var left: BSTNode<T>?
     var right: BSTNode<T>?
     
-    init (key: T) {
+    public init (key: T) {
         self.key = key
         self.left = nil
         self.right = nil
@@ -244,7 +244,7 @@ public class BST<T: Comparable> {
         // 0(n) for map
         // 0(n-1) for joining ?
         let result = nodes
-            .map { String(describing: $0) }
+            .map { String(describing: $0!) }
             .joined(separator: padding)
         
         return padding + result + padding

@@ -105,9 +105,12 @@ BST<Int>.createLine(for: 2, nodes: [root], totalHeight: height)  // bork
 nums = [6, 2]
 root = BST.prepareTree(with: &nums)
 height = BST.height(root: root)
+
+// simulate nodes
+var next = BSTNode<Int>(key: 2)
 BST.createLine(for: 1, nodes: [root], totalHeight: height)
-BST.createLine(for: 2, nodes: [root], totalHeight: height)
-BST.createLine(for: 3, nodes: [root], totalHeight: height)  // bork
+BST.createLine(for: 2, nodes: [root, next], totalHeight: height)
+BST.createLine(for: 3, nodes: [root, next], totalHeight: height)  // bork
 
 
 
