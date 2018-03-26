@@ -22,23 +22,36 @@ import Foundation
  
  When pretty-printed:
  
- A 2-level deep tree will have:
-   - 13 characters wide (only accounts for single digit keys, btw)
-   - 2 lines tall which is (2 * height) - 1
+ A 1-level deep tree will have:
+ - 5 total characters (2 padding chars on the left and right)
+ - 1 line tall.
  
- ----__6__----          // 2 underscores on either side.
- ---/-----\---
- --4-------9--          // 0 understcores on either side.
+ What if the paddings were factors of 2, then you could use power's of the level to know how wide to make it.
+ 
+ (level = 1, max height = 1, spacing = 3 ^ 1 = 3)
+ ---6---
+ 
+ (level = 1, max height = 2, spacing = 3 ^ 2 = 9)
+ ---------6---------
+ 
+ (level = 1, max height = 3, spacing = 3 ^ 3 = 27)
+ ---------------------------6---------------------------
+ 
+ --__6__--  level 1, max height 2, spacing = 4
+ -/-----\-
+ 4-------9  level 2, max height 2, spacing = 0
  
  A 3-level deep tree will have:
-  - 25 characters wide? (only accounts for single digit keys, btw)
-  - 5 lines tall. That is ((2 * height) - 1) lines tall?
  
- --------____6____--------            // 4 underscores either side
- -------/---------\-------
- ----__4__-------__9__----            // 2 underscores either side
- ---/-----\-----/-----\---
- --2-------5---8------10--            // 0 underscores on last level
+ ------____6____------  level 1, max height 3, spacing 12 (diff of 0)
+ -----/---------\-----
+ --__4__-------__9__--  level 2, max height 3, spacing 6 (diff of -6)
+ -/-----\-----/-----\-
+ 2-------5---8------10  level 3, max height 3, spacing 2 (diff of -4)
+
+ At level 1, you have the widest spacing.
+ At higher levels you subtract spacings.
+ 
  
  Concerns:
  - Padding the printing from the left edge. How do you do this?
@@ -55,13 +68,47 @@ import Foundation
  */
 
 import DataStructures
-var nums = [6, 4, 2, 5, 9, 8, 10]
-let root: BSTNode<Int>? = BST.prepareTree(with: &nums)
-let height = BST.height(root: root)
-print("yes! Pizza!")
+var nums = [6]
+var root: BSTNode<Int>? = BST.prepareTree(with: &nums)
+var height = BST.height(root: root)
+var pretty = BST.prettyPrint(root: root)
+print(pretty)
 
-//
-//func prettyPrintSlashes() -> String {
-//    return "slashes"
-//}
+nums = [6, 4, 2, 5, 9, 8, 10]
+root = BST.prepareTree(with: &nums)
+height = BST.height(root: root)
+pretty = BST.prettyPrint(root: root)
+print(pretty)
+
+// Really tall tree, leaning left.
+nums = [8, 7, 6, 5, 4, 3, 2, 1]
+root = BST.prepareTree(with: &nums)
+height = BST.height(root: root)
+
+// Unit tests:
+BST<Int>.paddingSpaces(for: 1, totalHeight: 1)      // 3
+BST<Int>.paddingSpaces(for: 1, totalHeight: 2)      // 9
+BST<Int>.paddingSpaces(for: 1, totalHeight: 3)      // 27
+
+BST<Int>.paddingSpaces(for: 2, totalHeight: 1)      // bad data
+BST<Int>.paddingSpaces(for: 1, totalHeight: 2)      // 9
+BST<Int>.paddingSpaces(for: 2, totalHeight: 2)      // 3
+
+// Simplest case:
+nums = [6]
+root = BST.prepareTree(with: &nums)
+height = BST<Int>.height(root: root)
+BST<Int>.createLine(for: 1, nodes: [root], totalHeight: height)
+BST<Int>.createLine(for: 2, nodes: [root], totalHeight: height)  // bork
+
+// Simpler case:
+nums = [6, 2]
+root = BST.prepareTree(with: &nums)
+height = BST.height(root: root)
+BST.createLine(for: 1, nodes: [root], totalHeight: height)
+BST.createLine(for: 2, nodes: [root], totalHeight: height)
+BST.createLine(for: 3, nodes: [root], totalHeight: height)  // bork
+
+
+
 
