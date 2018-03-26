@@ -76,11 +76,33 @@ class GraphListTests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: - Depth First Search
+    
     func testDFS() {
         graphList.depthFirstSearch(root: graphList.nodes.first)
     }
     
-    func testBFS() {
-        graphList.breadthFirstSearch(root: graphList.nodes.first)
+    // MARK: - Breadth First Search
+    
+    func testBFSReturnsNilWhenGraphIsEmpty() {
+        XCTAssertNil(graphList.breadthFirstSearch(from: nil, for: "Marcie"))
+    }
+    
+    func testBFSReturnsNilWhenGraphDoesNotContainKey() {
+        XCTAssertNil(graphList.breadthFirstSearch(from: graphList.nodes.first, for: "Pizza-The-Hut"))
+    }
+    
+    func testBFSReturnsKeyWhenGraphContainsKey() {
+        XCTAssert(graphList.breadthFirstSearch(from: graphList.nodes.first, for: "Marcie") == "Marcie")
+    }
+    
+    // MARK: - Path exists
+    
+    func testPathExistsReturnsFalseWhenADoesNotExistInGraph() {
+        
+    }
+    
+    func testPathExistsReturnsFalseWhenBDoesNotExistInGraph() {
+        
     }
 }

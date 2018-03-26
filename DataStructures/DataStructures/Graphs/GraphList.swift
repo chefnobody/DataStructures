@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class GraphNode<T> {
+public class GraphNode<T: Comparable> {
     
     // MARK: - Public properties
     
@@ -27,7 +27,7 @@ public class GraphNode<T> {
  A graph as an ajacency list.
  - This wrapper class may not always be necessary or helpful.
  */
-public class GraphList<T> {
+public class GraphList<T: Comparable> {
     public var nodes: [GraphNode<T>]
     
     public init() {
@@ -52,16 +52,21 @@ public class GraphList<T> {
        - Use a Queue to manage the nodes you've visited
        - Recursion not necessary.
      */
-    public func breadthFirstSearch(root: GraphNode<T>?) {
-        guard let root = root else { return }
+    public func breadthFirstSearch(from root: GraphNode<T>?, for key: T) -> T? {
+        guard let root = root else { return nil }
         
         let queue = Queue<GraphNode<T>>()
         root.visited = true
         queue.enQueue(key: root)
         
         while !queue.isEmpty() {
-            let node = queue.deQueue()!     // safe because the queue is _not_ empty at this point.
-            print(node.key)
+            // safe because the queue is _not_ empty at this point.
+            let node = queue.deQueue()!
+            
+            // Did we land on our key?
+            if node.key == key {
+                return key
+            }
             
             // Iterate over child nodes marking and adding to queue.
             for child in node.adjacents {
@@ -71,5 +76,11 @@ public class GraphList<T> {
                 }
             }
         }
+        
+        return nil
+    }
+    
+    public func pathExists(between a:T, and b:T) -> Bool {
+        return false
     }
 }
