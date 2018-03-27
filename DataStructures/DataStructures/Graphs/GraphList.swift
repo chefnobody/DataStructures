@@ -22,7 +22,10 @@ public class GraphNode<T: Comparable> {
         self.adjacents = [GraphNode<T>]()
         self.visited = false
     }
+    
+    // MARK: - Comparable ... ?
 }
+
 /*
  A graph as an ajacency list.
  - This wrapper class may not always be necessary or helpful.
@@ -34,17 +37,24 @@ public class GraphList<T: Comparable> {
         self.nodes = [GraphNode<T>]()
     }
     
-    public func depthFirstSearch(root: GraphNode<T>?) {
-        guard let node = root else { return }
+    // This is slightly odd, perhaps that we search for keys but return nodes.
+    public static func depthFirstSearch(root: GraphNode<T>?, for target: GraphNode<T>?) -> GraphNode<T>? {
+        guard let node = root else { return nil }
         
         print(node.key)
         node.visited = true
         
+        if node === target {
+            return node
+        }
+        
         for child in node.adjacents {
             if !child.visited {
-                depthFirstSearch(root: child)
+                return depthFirstSearch(root: child, for: target)
             }
         }
+        
+        return nil
     }
     
     /*
@@ -52,7 +62,8 @@ public class GraphList<T: Comparable> {
        - Use a Queue to manage the nodes you've visited
        - Recursion not necessary.
      */
-    public func breadthFirstSearch(from root: GraphNode<T>?, for key: T) -> T? {
+    
+    public static func breadthFirstSearch(from root: GraphNode<T>?, to target: GraphNode<T>?) -> GraphNode<T>? {
         guard let root = root else { return nil }
         
         let queue = Queue<GraphNode<T>>()
@@ -64,8 +75,8 @@ public class GraphList<T: Comparable> {
             let node = queue.deQueue()!
             
             // Did we land on our key?
-            if node.key == key {
-                return key
+            if node === target {
+                return node
             }
             
             // Iterate over child nodes marking and adding to queue.
@@ -80,7 +91,7 @@ public class GraphList<T: Comparable> {
         return nil
     }
     
-    public func pathExists(between a:T, and b:T) -> Bool {
-        return false
+    public static func pathExists(between a:GraphNode<T>, and b:GraphNode<T>) -> Bool {
+        return breadthFirstSearch(from: a, to: b) != nil ? true : false
     }
 }

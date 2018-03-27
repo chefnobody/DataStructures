@@ -13,62 +13,67 @@ class GraphListTests: XCTestCase {
 
     let graphList = GraphList<String>()
     
+    // Create parents
+    let roberto = GraphNode<String>(key: "Roberto")
+    let josephina = GraphNode<String>(key: "Josephina")
+    
+    // Kids
+    let marcos = GraphNode<String>(key: "Marcos")
+    let heffe = GraphNode<String>(key: "Heffe")
+    let marcia = GraphNode<String>(key: "Marcia")
+    let timbo = GraphNode<String>(key: "Timbo")
+    let christos = GraphNode<String>(key: "Christos")
+    let eseth = GraphNode<String>(key: "Eseth")
+    
+    // Grand kids
+    let arron = GraphNode<String>(key: "Arron")
+    
+    let koreo = GraphNode<String>(key: "Koreo")
+    let kilo = GraphNode<String>(key: "Kilo")
+    
+    let chapo = GraphNode<String>(key: "Chapo")
+    let macarena = GraphNode<String>(key: "Macarena")
+    
+    // Great grand kids
+    let clara = GraphNode<String>(key: "Clara")
+    let colito = GraphNode<String>(key: "Colito")
+    
+    let roberta = GraphNode<String>(key: "Roberta")
+    let laura = GraphNode<String>(key: "Laura")
+    
+    // Not in the family, but still a good friend.
+    let pizzaTheHut = GraphNode<String>(key: "Pizza-The-Hut")
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        // Create parents
-        let r = GraphNode<String>(key: "Robert")
-        let j = GraphNode<String>(key: "Joanne")
-        
-        // Kids
-        let m = GraphNode<String>(key: "Marc")
-        let je = GraphNode<String>(key: "Jeff")
-        let ma = GraphNode<String>(key: "Marcie")
-        let t = GraphNode<String>(key: "Tim")
-        let c = GraphNode<String>(key: "Christopher")
-        let s = GraphNode<String>(key: "Seth")
-        
-        // Grand kids
-        let a = GraphNode<String>(key: "Aaron")
-        
-        let k = GraphNode<String>(key: "Korey")
-        let ky = GraphNode<String>(key: "Kyle")
-        
-        let ch = GraphNode<String>(key: "Chase")
-        let mac = GraphNode<String>(key: "MacKenzie")
-        
-        // Great grand kids
-        let cl = GraphNode<String>(key: "Claire")
-        let co = GraphNode<String>(key: "Cole")
-        
-        let ro = GraphNode<String>(key: "Rowan")
-        let l = GraphNode<String>(key: "Leighton")
-        
         // establish connections between parents
-        r.adjacents.append(j)
-        j.adjacents.append(r)
+        roberto.adjacents.append(josephina)
+        josephina.adjacents.append(roberto)
         
         // .. then their children
-        r.adjacents.append(contentsOf: [m, je, ma, t, c, s])
-        j.adjacents.append(contentsOf: [m, je, ma, t, c, s])
-        
+        roberto.adjacents.append(contentsOf: [marcos, heffe, marcia, timbo, christos, eseth])
+        josephina.adjacents.append(contentsOf: [marcos, heffe, marcia, timbo, christos, eseth])
         
         // should children all be adjacents of one another? probably.
         
         // .. then for the grand children
-        m.adjacents.append(a)
-        j.adjacents.append(contentsOf: [k, ky])
-        t.adjacents.append(contentsOf: [ch, mac])
+        marcos.adjacents.append(arron)
+        heffe.adjacents.append(contentsOf: [koreo, kilo])
+        timbo.adjacents.append(contentsOf: [chapo, macarena])
         
         // ... then for great grand kids
-        a.adjacents.append(contentsOf: [cl, co])
+        arron.adjacents.append(contentsOf: [clara, colito])
         
         // should great grand kids be adjacents of one another? probably.
         
-        ky.adjacents.append(contentsOf: [ro, l])
+        kilo.adjacents.append(contentsOf: [roberta, laura])
         
-        graphList.nodes = [r, j, m, je, ma, t, c, s, a, k, ky, ch, mac, cl, co, ro, l]
+        graphList.nodes = [roberto, josephina,
+                           marcos, heffe, marcia, timbo, christos, eseth,
+                           arron, koreo, kilo, chapo, macarena,
+                           clara, colito, roberta, laura]
     }
     
     override func tearDown() {
@@ -79,30 +84,42 @@ class GraphListTests: XCTestCase {
     // MARK: - Depth First Search
     
     func testDFS() {
-        graphList.depthFirstSearch(root: graphList.nodes.first)
+        XCTAssert(GraphList<String>.depthFirstSearch(root: graphList.nodes.first, for: arron) === arron)
     }
     
     // MARK: - Breadth First Search
     
     func testBFSReturnsNilWhenGraphIsEmpty() {
-        XCTAssertNil(graphList.breadthFirstSearch(from: nil, for: "Marcie"))
+        XCTAssertNil(GraphList<String>.breadthFirstSearch(from: nil, to: marcia))
     }
     
     func testBFSReturnsNilWhenGraphDoesNotContainKey() {
-        XCTAssertNil(graphList.breadthFirstSearch(from: graphList.nodes.first, for: "Pizza-The-Hut"))
+        XCTAssertNil(GraphList<String>.breadthFirstSearch(from: graphList.nodes.first, to: pizzaTheHut))
     }
     
     func testBFSReturnsKeyWhenGraphContainsKey() {
-        XCTAssert(graphList.breadthFirstSearch(from: graphList.nodes.first, for: "Marcie") == "Marcie")
+        XCTAssert(GraphList<String>.breadthFirstSearch(from: graphList.nodes.first, to: marcia) === marcia)
     }
     
     // MARK: - Path exists
     
     func testPathExistsReturnsFalseWhenADoesNotExistInGraph() {
-        
+        XCTAssertFalse(GraphList<String>.pathExists(between: pizzaTheHut, and: roberto))
     }
     
     func testPathExistsReturnsFalseWhenBDoesNotExistInGraph() {
-        
+        XCTAssertFalse(GraphList<String>.pathExists(between: roberto, and: pizzaTheHut))
+    }
+    
+    func testPathExistsReturnsTrueWhenBothNodesSharePath() {
+        XCTAssertTrue(GraphList<String>.pathExists(between: roberto, and: colito))
+        XCTAssertTrue(GraphList<String>.pathExists(between: marcos, and: colito))
+        XCTAssertTrue(GraphList<String>.pathExists(between: arron, and: colito))
+    }
+    
+    func testPathExistsReturnsFalseWhenBothNodesDoNotSharePath() {
+        XCTAssertFalse(GraphList<String>.pathExists(between: arron, and: koreo))
+        XCTAssertFalse(GraphList<String>.pathExists(between: kilo, and: clara))
+        XCTAssertFalse(GraphList<String>.pathExists(between: chapo, and: colito))
     }
 }
