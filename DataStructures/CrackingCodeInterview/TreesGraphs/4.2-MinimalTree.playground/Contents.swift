@@ -11,10 +11,14 @@ import DataStructures
  - After each insert, the increasing values are going to make the tree, right-leaning.
  - So you need to balance after each insert.
  
+ To create a tree of minimal height you need the nodes on the left subtree to be roughly the same as the nodes on the right.
+ This means the root should be the middle.
  */
 
 var nums = [3, 4, 5, 6, 8, 10, 12, 16]
-let root = BST<Int>.prepareTree(with: &nums)
+var root = BST<Int>.prepareTree(with: &nums)
 BST.height(root: root)
 
-
+nums = [3, 4, 5, 6, 8, 10, 12, 16]
+root = BST<Int>.createMinimalBST(from: nums)
+BST<Int>.height(root: root)

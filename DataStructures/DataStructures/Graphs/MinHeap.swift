@@ -8,7 +8,8 @@
 
 import Foundation
 
-public class MinHeap<T> {
+public class MinHeap<T: Comparable> {
+    
     var root: BSTNode<T>?
     
     /*

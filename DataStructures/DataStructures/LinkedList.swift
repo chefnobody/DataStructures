@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ListNode<T: Hashable>: Equatable {
+public class ListNode<T: Comparable>: Equatable {
     public var key: T
     public var next: ListNode<T>?
     
@@ -23,7 +23,7 @@ public class ListNode<T: Hashable>: Equatable {
     }
 }
 
-public class LinkedList<T: Hashable> {
+public class LinkedList<T: Comparable> {
     
     // MARK: - Public properties
     
@@ -222,7 +222,7 @@ public class LinkedList<T: Hashable> {
 }
 
 // Extensions for solving test questions ...
-extension LinkedList where T: Comparable {
+extension LinkedList where T: Hashable {
     
     // Returns true for success cases. Returns false otherwise.
     //

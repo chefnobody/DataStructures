@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BSTNode<T>: CustomStringConvertible {
+public class BSTNode<T: Comparable>: CustomStringConvertible {
     
     // MARK: - Custom String Convertible Conformance
     
@@ -16,15 +16,27 @@ public class BSTNode<T>: CustomStringConvertible {
         return String(describing: key)
     }
     
-    var key: T
-    var left: BSTNode<T>?
-    var right: BSTNode<T>?
+    public var key: T
+    public var left: BSTNode<T>?
+    public var right: BSTNode<T>?
     
     public init (key: T) {
         self.key = key
         self.left = nil
         self.right = nil
     }
+}
+
+extension BSTNode: Comparable {
+    public static func <(lhs: BSTNode<T>, rhs: BSTNode<T>) -> Bool {
+        return lhs.key < rhs.key
+    }
+    
+    public static func ==(lhs: BSTNode<T>, rhs: BSTNode<T>) -> Bool {
+        return lhs.key == rhs.key
+    }
+    
+    
 }
 
 // A Binary Search Tree
@@ -112,6 +124,29 @@ public class BST<T: Comparable> {
         }        
     }
     
+    // MARK: - Creation
+    
+    static public func createMinimalBST(from numbers: [Int]) -> BSTNode<Int>? {
+        
+        // Ensure the numbers are sorted.
+        let sorted = numbers.sorted()
+        
+        return createMinimalBST(from: sorted, startIndex: 0, endIndex: numbers.count - 1)
+    }
+    
+    static private func createMinimalBST(from numbers: [Int], startIndex: Int, endIndex: Int) -> BSTNode<Int>? {
+        
+        if endIndex < startIndex {
+            return nil
+        }
+        
+        let middle = (startIndex + endIndex) / 2
+        let node = BSTNode<Int>(key: numbers[middle])
+        node.left = createMinimalBST(from: numbers, startIndex: startIndex, endIndex: middle - 1)    // left half of array
+        node.right = createMinimalBST(from: numbers, startIndex: middle + 1, endIndex: endIndex)    // right half of array
+        return node
+    }
+    
     // MARK: - Insertion
     
     // Finds the right place for this key to hang in the tree.
@@ -175,14 +210,17 @@ public class BST<T: Comparable> {
             return "Tree is Empty"
         }
         
-        // Main height of tree.
-        let height = BST.height(root: node)
+        var pretty = String()
         
-        // Use queues to walk through each level (like finding a height)
+        // Main height of tree.
+        let height = BST<T>.height(root: node)
+
+        // Use queues to walk through each level (similar to finding height)
         var level = 0
+        
         let queue = Queue<BSTNode<T>>()
         queue.enQueue(key: node)
-
+        
         while true {
             // Be sure to kick-out of this loop
             // when we run out of nodes in the queue
@@ -196,8 +234,8 @@ public class BST<T: Comparable> {
                 break
             }
             
-            // Add slashes?
-            
+            // Skip adding slashes for now.
+            pretty += "\n"
             level += 1
             
             while nodeCount > 0 {
@@ -265,4 +303,55 @@ public class BST<T: Comparable> {
         
         return String(repeatElement("-", count: length))
     }
+
+    // From 4.3
+    static public func createListOfLevels(root: BSTNode<T>?, levelsList: inout [LinkedList<BSTNode<T>>], level: Int) {
+        
+        guard let node = root else { return }
+        
+        var list: LinkedList<BSTNode<T>>? = nil
+
+        if level == levelsList.count {
+            // Level is not contained in the list. Create a new one
+            list = LinkedList<BSTNode<T>>()
+            /* Levels are always traversed in order. So, if this is the first time we've visited level i,
+             we must have seen levels 0 through i-1. We can therefore safely add the level at the end.
+             */
+            levelsList.append(list!)
+
+        } else {
+            list = levelsList[level]
+        }
+
+        list?.append(key: node)
+        createListOfLevels(root: node.left, levelsList: &levelsList, level: level + 1)
+        createListOfLevels(root: node.right, levelsList: &levelsList, level: level + 1)
+    }
+
+    // From 4.4
+    
+    // 0(n * log n) complexity.
+    static public func isBalanced(root: BSTNode<T>?) -> Bool {
+        // For our purposes, a balanced tree is defined to be a tree such that the heights of the two subtrees
+        // of any node never differ by more than one.
+        
+        // Empty Tree casse.
+        guard let node = root else { return false }
+        
+        let rightHeight = height(root: node.right)
+        let leftHeight = height(root: node.left)
+        
+        // Immediately return false if a height diff
+        // is greater than 1.
+        if abs(rightHeight - leftHeight) > 1 {
+            return false
+        }
+        
+        // Recurse down the tree if the subtrees were found
+        // to have the same height.
+        return isBalanced(root: node.left) && isBalanced(root: node.right)
+    }
 }
+
+
+
