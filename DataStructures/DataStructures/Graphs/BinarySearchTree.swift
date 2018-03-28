@@ -338,6 +338,8 @@ public class BST<T: Comparable> {
         // Empty Tree casse.
         guard let node = root else { return false }
         
+        // Could get faster performance if height function _also_ checked for balance.
+        // Have height return an error code when the tree is imbalanced, and the height otherwise.
         let rightHeight = height(root: node.right)
         let leftHeight = height(root: node.left)
         
@@ -350,6 +352,69 @@ public class BST<T: Comparable> {
         // Recurse down the tree if the subtrees were found
         // to have the same height.
         return isBalanced(root: node.left) && isBalanced(root: node.right)
+    }
+
+    // From 4.5
+    
+    // A BST is valid if, for every subtree the values in the tree adhere to
+    // the following ordering:
+    // Left Node <= Current Node < Right Node for ALL subtrees.
+    
+    static public func isValidBST(root: BSTNode<T>?, lastSeen: inout T?) -> Bool {
+    
+        guard let node = root else {
+            // Returning true, here, is that OK?
+            return true
+        }
+        
+        // Recurse left subtree for in-order traversal
+        if !isValidBST(root: node.left, lastSeen: &lastSeen) {
+            return false
+        }
+        
+        // Compare lastSeen w/ current node.
+        // If current node <= the node we last saw,
+        // which should always be the node to our logical "left",
+        // Then we dont' have a valid BST. If I'm the current node
+        // all nodes to my left should have values less than me.
+        if let last = lastSeen, node.key <= last {
+            return false
+        }
+        
+        // Visit the current node.
+        lastSeen = node.key
+        
+        // Recurse the right subtree maintaining in-order traversal
+        if !isValidBST(root: node.right, lastSeen: &lastSeen) {
+            return false
+        }
+        
+        // Never returned false, so we're valid!
+        return true
+    }
+
+    static public func isValidBSTMinMax(root: BSTNode<T>?) -> Bool {
+        return isValidBSTMinMax(root: root, min: nil, max: nil)
+    }
+    
+    // Recurses left and right passing down a min value to the left and a max value to the right.
+    static private func isValidBSTMinMax(root: BSTNode<T>?, min: T?, max: T?) -> Bool {
+        guard let node = root else { return true }
+        
+        // If the current node is less than the min, this can't be a BST.
+        // If the current node is greater than the max, this can't be a BST.
+        if (min != nil && node.key <= min!) || (max != nil && node.key > max!) {
+            return false
+        }
+        
+        // Recurse left with a new max set to the current node's key.
+        // Recurse right with a new min set to the current node's key.
+        // Fail if either call fails.
+        if !isValidBSTMinMax(root: node.left, min: min, max: node.key) || !isValidBSTMinMax(root: node.right, min: node.key, max: max) {
+            return false
+        }
+        
+        return true
     }
 }
 
