@@ -1,9 +1,13 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
+import DataStructures
 
 /*
  Build Order:
+ AKA Topological Sorting of a graph:
+ Def: Lineraly ordering the vertices (nodes) such that for every edge (a -> b) a appears before b in the linear order.
+ 
  You are given a list of projects and a list of dependencies (which is a list of pairs of projects, where the second project is dependent upon the first project).
  All of a project's dependencies must be built before the project is. Find a build order that will allow the projecs to be built If there is no valid build order, return an error.
  Ex:
@@ -49,7 +53,9 @@ import UIKit
  
  Approaches:
  - I've heard this called a dependency tree or dependency graph, so using one of those structures could help.
- - Taken the list of projects, ensure that for a given dependency (proj a, proj b) that project a comes before proj b
+   Build a graph with vertexes (nodes) and edges indicating a build dependency. If there's an edge from a -> b, that means b depends on a. Traverse the tree, removing edges from each vertex and pushing vertex onto a stack.
+ 
+ - Array based? Taken the list of projects, ensure that for a given dependency (proj a, proj b) that project a comes before proj b
    in the list of projects. iterate through all the dependencies and all the projects.
  
  Issues:
@@ -60,12 +66,7 @@ import UIKit
  - Can't assume the projects array has any helpful sorted order for finding dependencies.
  - With the iterative array-basd approach you get super inefficient because you're traversing the projects array at most 0(n) times
    for each dependency.
- 
- 
  */
-
-var projects = ["a", "b", "c", "d", "e", "f"]
-var dependencies = [("a", "d"), ("f", "b"), ("b", "d"), ("f", "a"), ("d", "c")]
 
 func findBuildOrder(projects: inout [String], dependencies: [(String, String)]) -> String {
     
@@ -93,6 +94,9 @@ func findBuildOrder(projects: inout [String], dependencies: [(String, String)]) 
     return projects.joined(separator: " -> ")
 }
 
+var projects = ["a", "b", "c", "d", "e", "f"]
+var dependencies = [("a", "d"), ("f", "b"), ("b", "d"), ("f", "a"), ("d", "c")]
+
 // f, a, b, d, c, e
 findBuildOrder(projects: &projects, dependencies: dependencies)
 
@@ -100,3 +104,20 @@ findBuildOrder(projects: &projects, dependencies: dependencies)
 projects = ["a", "b", "c", "d", "e", "f"]
 dependencies = [("a", "d"), ("f", "b"), ("x", "f"), ("b", "d"), ("f", "a"), ("d", "c")]
 findBuildOrder(projects: &projects, dependencies: dependencies)
+
+
+// Builds a graph with verticies and edges.
+func findBuildOrderGraph(projects: [String], dependencies: [(String, String)]) -> String {
+    let root: GraphNode<String>? = buildGraph(nodes: projects, edges: dependencies)
+}
+
+func buildGraph(vertexes: [String], edges: [(String, String)]) -> GraphNode<String>? {
+    
+    // map vertexes into GraphNodes
+    let nodes = vertexes.map { GraphNode<String>(key: $0) }
+    
+    for n in nodes {
+        
+    }
+}
+
