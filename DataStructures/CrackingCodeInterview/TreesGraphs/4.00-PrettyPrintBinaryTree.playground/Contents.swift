@@ -77,13 +77,14 @@ print(pretty)
 nums = [6, 4, 2, 5, 9, 8, 10]
 root = BST.prepareTree(with: &nums)
 height = BST.height(root: root)
-pretty = BST.prettyPrint(root: root)
-print(pretty)
+print(BST<Int>.treeString(root!, using: { ("\($0.key)", $0.left, $0.right) }))
 
 // Really tall tree, leaning left.
 nums = [8, 7, 6, 5, 4, 3, 2, 1]
 root = BST.prepareTree(with: &nums)
 height = BST.height(root: root)
+
+
 
 // Unit tests:
 BST<Int>.paddingSpaces(for: 1, totalHeight: 1)      // 3
@@ -111,7 +112,4 @@ var next = BSTNode<Int>(key: 2)
 BST.createLine(for: 1, nodes: [root], totalHeight: height)
 BST.createLine(for: 2, nodes: [root, next], totalHeight: height)
 BST.createLine(for: 3, nodes: [root, next], totalHeight: height)  // bork
-
-
-
 
