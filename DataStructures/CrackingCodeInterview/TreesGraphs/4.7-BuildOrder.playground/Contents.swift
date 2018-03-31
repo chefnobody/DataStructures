@@ -1,7 +1,7 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-import DataStructures
+//import DataStructures
 
 /*
  Build Order:
@@ -68,56 +68,56 @@ import DataStructures
    for each dependency.
  */
 
-func findBuildOrder(projects: inout [String], dependencies: [(String, String)]) -> String {
-    
-    for (i, j) in dependencies {
-        
-        guard let depIndex = projects.index(of: i) else {
-            return "Impossible build order. No project for dependency: \(i) exists."
-        }
-        
-        guard let projIndex = projects.index(of: j) else {
-            return "Impossible build order. No project \(j) exists."
-        }
-        
-        // Check if the dependency will be built
-        // after the project. If so, move the dep
-        // to the position right before the project.
-        
-        // Neither will be nil at this point.
-        if depIndex > projIndex {
-            // move item at depIndex to projIndex - 1
-            projects.insert(projects.remove(at: depIndex), at: (projIndex - 1))
-        }
-    }
-    
-    return projects.joined(separator: " -> ")
-}
-
-var projects = ["a", "b", "c", "d", "e", "f"]
-var dependencies = [("a", "d"), ("f", "b"), ("b", "d"), ("f", "a"), ("d", "c")]
-
-// f, a, b, d, c, e
-findBuildOrder(projects: &projects, dependencies: dependencies)
-
-// invalid build order because dep x, isn't an available project.
-projects = ["a", "b", "c", "d", "e", "f"]
-dependencies = [("a", "d"), ("f", "b"), ("x", "f"), ("b", "d"), ("f", "a"), ("d", "c")]
-findBuildOrder(projects: &projects, dependencies: dependencies)
-
-
-// Builds a graph with verticies and edges.
-func findBuildOrderGraph(projects: [String], dependencies: [(String, String)]) -> String {
-    let root: GraphNode<String>? = buildGraph(nodes: projects, edges: dependencies)
-}
-
-func buildGraph(vertexes: [String], edges: [(String, String)]) -> GraphNode<String>? {
-    
-    // map vertexes into GraphNodes
-    let nodes = vertexes.map { GraphNode<String>(key: $0) }
-    
-    for n in nodes {
-        
-    }
-}
+//func findBuildOrder(projects: inout [String], dependencies: [(String, String)]) -> String {
+//    
+//    for (i, j) in dependencies {
+//        
+//        guard let depIndex = projects.index(of: i) else {
+//            return "Impossible build order. No project for dependency: \(i) exists."
+//        }
+//        
+//        guard let projIndex = projects.index(of: j) else {
+//            return "Impossible build order. No project \(j) exists."
+//        }
+//        
+//        // Check if the dependency will be built
+//        // after the project. If so, move the dep
+//        // to the position right before the project.
+//        
+//        // Neither will be nil at this point.
+//        if depIndex > projIndex {
+//            // move item at depIndex to projIndex - 1
+//            projects.insert(projects.remove(at: depIndex), at: (projIndex - 1))
+//        }
+//    }
+//    
+//    return projects.joined(separator: " -> ")
+//}
+//
+//var projects = ["a", "b", "c", "d", "e", "f"]
+//var dependencies = [("a", "d"), ("f", "b"), ("b", "d"), ("f", "a"), ("d", "c")]
+//
+//// f, a, b, d, c, e
+//findBuildOrder(projects: &projects, dependencies: dependencies)
+//
+//// invalid build order because dep x, isn't an available project.
+//projects = ["a", "b", "c", "d", "e", "f"]
+//dependencies = [("a", "d"), ("f", "b"), ("x", "f"), ("b", "d"), ("f", "a"), ("d", "c")]
+//findBuildOrder(projects: &projects, dependencies: dependencies)
+//
+//
+//// Builds a graph with verticies and edges.
+//func findBuildOrderGraph(projects: [String], dependencies: [(String, String)]) -> String {
+//    let root: GraphNode<String>? = buildGraph(nodes: projects, edges: dependencies)
+//}
+//
+//func buildGraph(vertexes: [String], edges: [(String, String)]) -> GraphNode<String>? {
+//    
+//    // map vertexes into GraphNodes
+//    let nodes = vertexes.map { GraphNode<String>(key: $0) }
+//    
+//    for n in nodes {
+//        
+//    }
+//}
 
